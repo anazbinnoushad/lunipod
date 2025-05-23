@@ -3,7 +3,7 @@ import {nav} from "./nav";
 
 const Sidebar = () => {
   return (
-    <nav className="pl-2 flex flex-col gap-2">
+    <nav className="pl-5 flex flex-col gap-2">
       {nav.map(({title, header, route}, idx) => {
         const key = `${title}_${idx}`;
         return header ? (
@@ -12,7 +12,9 @@ const Sidebar = () => {
           </h3>
         ) : (
           <Link href={`/docs/${route!}`} key={key}>
-            <h4 className="text-base">{title}</h4>
+            <h4 className="text-base font-light text-muted-foreground">
+              {title}
+            </h4>
           </Link>
         );
       })}
