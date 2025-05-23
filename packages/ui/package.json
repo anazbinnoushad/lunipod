@@ -4,6 +4,7 @@
   "private": true,
   "exports": {
     "./*": "./src/*.tsx",
+    "./theme.css": "./src/theme.css",
     "./styles.css": "./dist/styles.css",
     "./Colors": "./src/Colors.tsx"
   },
