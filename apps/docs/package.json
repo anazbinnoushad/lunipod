@@ -11,13 +11,18 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
     "@repo/ui": "workspace:*",
     "@tailwindcss/cli": "^4.1.7",
     "@tailwindcss/postcss": "^4.1.7",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.511.0",
     "next": "^15.3.0",
     "postcss": "^8.5.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "tailwind-merge": "^3.2.0",
     "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
@@ -27,6 +32,7 @@
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.1",
     "eslint": "^9.27.0",
+    "tw-animate-css": "^1.3.0",
     "typescript": "5.8.2"
   }
 }
