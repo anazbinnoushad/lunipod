@@ -4,6 +4,5 @@ export type NavItem =
 
 export const nav: NavItem[] = [
   {title: "Components", header: true},
-  {title: "Shinny Button", route: "shinny-button"},
-  {title: "Boom Bang", route: "boom-bang"},
+  {title: "Split Text", route: "split-text"},
 ];

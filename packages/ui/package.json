@@ -28,12 +28,14 @@
     "typescript": "5.8.2"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@tailwindcss/cli": "^4.1.7",
     "@tailwindcss/postcss": "^4.1.7",
+    "class-variance-authority": "^0.7.1",
+    "gsap": "^3.13.0",
     "postcss": "^8.5.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.7",
-    "class-variance-authority": "^0.7.1"
+    "tailwindcss": "^4.1.7"
   }
 }
