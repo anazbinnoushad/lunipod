@@ -5,4 +5,5 @@ export type NavItem =
 export const nav: NavItem[] = [
   {title: "Components", header: true},
   {title: "Split Text", route: "split-text"},
+  {title: "Unfolding Text", route: "unfolding-text"},
 ];
