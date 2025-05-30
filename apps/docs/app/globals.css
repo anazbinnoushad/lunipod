@@ -6,12 +6,9 @@
 @layer components {
   .backgroundGradient {
     /* Gradient created with https://colorfinder.app/css-tools/gradient-creator */
-    background: linear-gradient(
-      0deg,
-      rgba(0, 0, 94, 1) 3%,
-      rgba(68, 17, 254, 1) 92%
-    );
+    background: linear-gradient(196deg, rgba(0, 0, 0, 1) 20%, rgba(20, 20, 20, 1) 80%)
   }
+
 }
 
 @theme inline {
@@ -126,10 +123,12 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
-pre{
+
+pre {
   background: transparent !important;
 }
