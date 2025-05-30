@@ -12,7 +12,7 @@ const UnfoldingText = () => {
       gsap
         .to(textRef.current, {
           transform: "rotateY(0)",
-          duration: 1,
+          duration: 1.5,
         })
         .then(() => {
           gsap.to(textRef.current, {
@@ -26,16 +26,22 @@ const UnfoldingText = () => {
   );
   return (
     <div>
+      <style>
+        @import
+        url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+      </style>
+
       <div style={{perspective: 500}}>
         <div
-          className="font-bold"
+          className="font-bold "
           style={{
             fontSize: 80,
-            WebkitTextStroke: 1,
+            WebkitTextStroke: 0.4,
             WebkitTextStrokeColor: "white",
             WebkitTextFillColor: "black",
             transform: "rotateY(40deg)",
             transformOrigin: "left center",
+            fontFamily: "'Anton', sans-serif",
           }}
           ref={textRef}
         >
