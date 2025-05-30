@@ -7,7 +7,7 @@ const FlippingCard = () => {
     <div>
       <div>
         <h2 className=" text-3xl font-bold mb-2">Unfolding Text</h2>
-        <h6 className=" text-lg text-muted-foreground">
+        <h6 className="font-light text-muted-foreground">
           A customizable, compound modal component with animated transitions
         </h6>
       </div>

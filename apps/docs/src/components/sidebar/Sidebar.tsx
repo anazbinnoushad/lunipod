@@ -7,7 +7,7 @@ const Sidebar = () => {
       {nav.map(({title, header, route}, idx) => {
         const key = `${title}_${idx}`;
         return header ? (
-          <h3 className="text-xl font-semibold mb-1" key={key}>
+          <h3 className="text-lg mb-1" key={key}>
             {title}
           </h3>
         ) : (
