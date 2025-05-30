@@ -11,7 +11,7 @@ const Sidebar = () => {
             {title}
           </h3>
         ) : (
-          <Link href={`/docs/${route!}`} key={key}>
+          <Link href={`/components/${route!}`} key={key}>
             <h4 className="text-base font-light text-muted-foreground">
               {title}
             </h4>
