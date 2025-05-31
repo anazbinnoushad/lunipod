@@ -2,11 +2,11 @@ import CodeBlock from "@/components/CodeBlock";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import MagneticText from "@repo/ui/Components/MagneticText";
 
-const TestFace = () => {
+const MagneticTextShowcase = () => {
   return (
     <div>
       <div>
-        <h2 className=" text-3xl font-bold mb-2">Unfolding Text</h2>
+        <h2 className=" text-3xl font-bold mb-2">Magnetic Text</h2>
         <h6 className="font-light text-muted-foreground">
           A customizable, compound modal component with animated transitions
         </h6>
@@ -41,4 +41,4 @@ const TestFace = () => {
   );
 };
 
-export default TestFace;
+export default MagneticTextShowcase;

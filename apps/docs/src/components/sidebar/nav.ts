@@ -7,4 +7,5 @@ export const nav: NavItem[] = [
   {title: "Testing", route: "test-face"},
   {title: "Split Text", route: "split-text"},
   {title: "Unfolding Text", route: "unfolding-text"},
+  {title: "Magnetic Text", route: "magnetic-text"},
 ];
