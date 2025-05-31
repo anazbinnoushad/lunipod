@@ -1,4 +1,5 @@
-import CodeBlock from "@/components/CodeBlock";
+import CodeBlock from "@/components/Showcase/CodeBlock";
+import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import UnfoldingText from "@repo/ui/Components/UnfoldingText";
 
@@ -14,11 +15,9 @@ const FlippingCard = () => {
       <div>
         <TabLayout>
           <PreviewTab>
-            <div className=" w-full h-96 border rounded-2xl flex justify-center items-center">
-              <div className=" w-4/6">
-                <UnfoldingText />
-              </div>
-            </div>
+            <PreviewBlock>
+              <UnfoldingText />
+            </PreviewBlock>
           </PreviewTab>
           <CodeTab>
             <h2 className=" text-xl font-bold mb-2">Installation</h2>

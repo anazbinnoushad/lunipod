@@ -1,4 +1,5 @@
-import CodeBlock from "@/components/CodeBlock";
+import CodeBlock from "@/components/Showcase/CodeBlock";
+import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import MagneticText from "@repo/ui/Components/MagneticText";
 
@@ -14,11 +15,9 @@ const MagneticTextShowcase = () => {
       <div>
         <TabLayout>
           <PreviewTab>
-            <div className=" w-full h-96 border rounded-2xl flex justify-center items-center">
-              <div className=" w-4/6">
-                <MagneticText text="OKSUNFON" />
-              </div>
-            </div>
+            <PreviewBlock>
+              <MagneticText text="OKSUNFON" />
+            </PreviewBlock>
           </PreviewTab>
           <CodeTab>
             <h2 className=" text-xl font-bold mb-2">Installation</h2>

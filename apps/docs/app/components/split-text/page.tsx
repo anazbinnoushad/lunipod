@@ -1,4 +1,5 @@
-import CodeBlock from "@/components/CodeBlock";
+import CodeBlock from "@/components/Showcase/CodeBlock";
+import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import SplitTextReveal from "@repo/ui/Components/SplitTextReveal";
 
@@ -14,15 +15,13 @@ const SplitText = () => {
       <div>
         <TabLayout>
           <PreviewTab>
-            <div className=" w-full h-96 border rounded-2xl flex justify-center items-center">
-              <div className=" w-4/6">
-                <SplitTextReveal>
-                  Developer who loves building fast, accessible web apps with
-                  smooth user experiences. I’m all about blending thoughtful
-                  design with clean code to bring cool
-                </SplitTextReveal>
-              </div>
-            </div>
+            <PreviewBlock>
+              <SplitTextReveal>
+                Developer who loves building fast, accessible web apps with
+                smooth user experiences. I’m all about blending thoughtful
+                design with clean code to bring cool
+              </SplitTextReveal>
+            </PreviewBlock>
           </PreviewTab>
           <CodeTab>
             <h2 className=" text-xl font-bold mb-2">Installation</h2>

@@ -29,7 +29,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({language, code, className}) => {
   return (
     <div
       className={cn(
-        "relative rounded-lg border text-sm overflow-hidden bg-black",
+        "relative rounded-lg border border-muted text-sm overflow-hidden bg-black",
         className
       )}
     >
