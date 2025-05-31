@@ -1,5 +1,6 @@
 import {cva, type VariantProps} from "class-variance-authority";
 import {cn} from "@repo/utils/cn";
+import "../dist/styles.css";
 
 const buttonStyles = cva(
   ["rounded-lg", "px-8", "py-2", "transition-all", "font-medium"],
@@ -70,7 +71,7 @@ interface ButtonProps extends VariantProps<typeof buttonStyles> {
   href: string;
 }
 
-export function Button({children, href, variant, color}: ButtonProps) {
+export default function Button({children, href, variant, color}: ButtonProps) {
   return (
     <a
       className={cn(
