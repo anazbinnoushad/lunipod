@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import {ThemeProvider} from "@/components/theme-provider";
 import Navbar from "@/components/forLayout/Navbar";
+import Footer from "@/components/forLayout/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistSans.className}`}>
+      <body
+        className={`${geistSans.variable} ${geistSans.className} backgroundGradient`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -33,6 +36,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

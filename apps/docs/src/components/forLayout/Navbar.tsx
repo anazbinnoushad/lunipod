@@ -4,11 +4,16 @@ import {Github} from "lucide-react";
 
 const Navbar = () => {
   return (
-    <div className=" w-full flex justify-center border-b border-dashed border-muted  top-0 bg-background fixed">
+    <div className=" w-full flex justify-center border-b border-dashed border-muted  top-0 fixed">
       <div className=" max-w-6xl h-16 w-full py-2 flex justify-between items-center">
-        <div className=" text-xl font-semibold">LUNIPOD UI</div>
+        <div className=" text-xl font-semibold">
+          <Link href="/">LUNIPOD UI</Link>
+        </div>
         <div className=" flex gap-6 items-center">
-          <Link href="/components" className=" text-sm text-muted-foreground">
+          <Link
+            href="/components/split-text"
+            className=" text-sm text-muted-foreground"
+          >
             Components
           </Link>
           <Link href="https://github.com/anazbinnoushad/lunipod">
