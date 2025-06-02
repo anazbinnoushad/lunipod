@@ -2,6 +2,7 @@ import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import SplitTextReveal from "@repo/ui/Components/SplitTextReveal";
+import {splitTextRevealRaw} from "../../../constants/TextComponent/SplitTextRaw";
 
 const SplitText = () => {
   return (
@@ -24,19 +25,15 @@ const SplitText = () => {
             </PreviewBlock>
           </PreviewTab>
           <CodeTab>
-            <h2 className=" text-xl font-bold mb-2">Installation</h2>
-            <CodeBlock language="tsx" code={`npm i @gsap/react`} />
-            <h2 className=" text-xl font-bold mb-2">Usage</h2>
-            <CodeBlock
-              language="tsx"
-              code={`
-<SplitTextReveal>
-    Developer who loves building fast, accessible web apps with
-    smooth user experiences. I’m all about blending thoughtful
-    design with clean code to bring cool
-  </SplitTextReveal>
-`}
-            />
+            <div className=" space-y-4">
+              <h2 className=" text-xl font-bold mb-2">Installation</h2>
+              <CodeBlock
+                language="tsx"
+                code={splitTextRevealRaw.installation}
+              />
+              <h2 className=" text-xl font-bold mb-2">Usage</h2>
+              <CodeBlock language="tsx" code={splitTextRevealRaw.usage} />
+            </div>
           </CodeTab>
         </TabLayout>
       </div>
