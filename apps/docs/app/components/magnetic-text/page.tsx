@@ -2,6 +2,7 @@ import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import MagneticText from "@repo/ui/Components/MagneticText";
+import {magneticTextRaw} from "../../../constants/TextComponent/magenticTextRaw";
 
 const MagneticTextShowcase = () => {
   return (
@@ -21,18 +22,11 @@ const MagneticTextShowcase = () => {
           </PreviewTab>
           <CodeTab>
             <h2 className=" text-xl font-bold mb-2">Installation</h2>
-            <CodeBlock language="tsx" code={`npm i @gsap/react`} />
+            <CodeBlock language="tsx" code={magneticTextRaw.installation} />
             <h2 className=" text-xl font-bold mb-2">Usage</h2>
-            <CodeBlock
-              language="tsx"
-              code={`
-<SplitTextReveal>
-    Developer who loves building fast, accessible web apps with
-    smooth user experiences. I’m all about blending thoughtful
-    design with clean code to bring cool
-  </SplitTextReveal>
-`}
-            />
+            <CodeBlock language="tsx" code={magneticTextRaw.usage} />
+            <h2 className=" text-xl font-bold mb-2">Code</h2>
+            <CodeBlock language="tsx" code={magneticTextRaw.code} />
           </CodeTab>
         </TabLayout>
       </div>

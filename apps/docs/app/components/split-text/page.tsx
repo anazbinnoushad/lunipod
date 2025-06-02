@@ -25,17 +25,12 @@ const SplitText = () => {
             </PreviewBlock>
           </PreviewTab>
           <CodeTab>
-            <div className=" space-y-4">
-              <h2 className=" text-xl font-bold mb-2">Installation</h2>
-              <CodeBlock
-                language="tsx"
-                code={splitTextRevealRaw.installation}
-              />
-              <h2 className=" text-xl font-bold mb-2">Usage</h2>
-              <CodeBlock language="tsx" code={splitTextRevealRaw.usage} />
-              <h2 className=" text-xl font-bold mb-2">Code</h2>
-              <CodeBlock language="tsx" code={splitTextRevealRaw.code} />
-            </div>
+            <h2 className=" text-xl font-bold mb-2">Installation</h2>
+            <CodeBlock language="tsx" code={splitTextRevealRaw.installation} />
+            <h2 className=" text-xl font-bold mb-2">Usage</h2>
+            <CodeBlock language="tsx" code={splitTextRevealRaw.usage} />
+            <h2 className=" text-xl font-bold mb-2">Code</h2>
+            <CodeBlock language="tsx" code={splitTextRevealRaw.code} />
           </CodeTab>
         </TabLayout>
       </div>

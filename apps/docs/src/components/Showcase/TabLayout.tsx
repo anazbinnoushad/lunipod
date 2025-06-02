@@ -45,7 +45,9 @@ const TabLayout = ({children}: TabLayoutProps) => {
         </TabsTrigger>
       </TabsList>
       <TabsContent value="preview">{contentMap.PreviewTab}</TabsContent>
-      <TabsContent value="code">{contentMap.CodeTab}</TabsContent>
+      <TabsContent value="code" className=" space-y-4">
+        {contentMap.CodeTab}
+      </TabsContent>
     </Tabs>
   );
 };
