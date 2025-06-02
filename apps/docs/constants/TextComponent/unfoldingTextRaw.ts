@@ -1,3 +1,4 @@
+const code = `
 "use client";
 
 import {useRef} from "react";
@@ -45,13 +46,13 @@ const UnfoldingText = ({
     <div style={{perspective: 500}}>
       <div
         ref={textRef}
-        className={`font-bold ${className}`}
+        className={\`font-bold \${className}\`}
         style={{
           fontSize,
           WebkitTextStroke: 0.4,
           WebkitTextStrokeColor: strokeColor,
           WebkitTextFillColor: fillColor,
-          transform: `rotateY(${initialRotateY}deg)`,
+          transform: \`rotateY(\${initialRotateY}deg)\`,
           transformOrigin: "left center",
           lineHeight: 1,
         }}
@@ -63,3 +64,16 @@ const UnfoldingText = ({
 };
 
 export default UnfoldingText;
+
+`;
+
+export const unfoldingTextRaw = {
+  installation: `npm i @gsap/react`,
+  usage: `
+<UnfoldingText
+    text="THE PROJECT"
+    className={\`\${DrukWide.className}\`}
+/>
+    `,
+  code: code,
+};

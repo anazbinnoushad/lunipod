@@ -2,6 +2,13 @@ import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import UnfoldingText from "@repo/ui/Components/UnfoldingText";
+import localFont from "next/font/local";
+import {unfoldingTextRaw} from "../../../constants/TextComponent/unfoldingTextRaw";
+
+const DrukWide = localFont({
+  src: "../../fonts/FontsFree-Net-Druk-Wide-Bold.ttf",
+  display: "swap",
+});
 
 const FlippingCard = () => {
   return (
@@ -16,23 +23,19 @@ const FlippingCard = () => {
         <TabLayout>
           <PreviewTab>
             <PreviewBlock>
-              <UnfoldingText />
+              <UnfoldingText
+                text="THE PROJECT"
+                className={`${DrukWide.className}`}
+              />
             </PreviewBlock>
           </PreviewTab>
           <CodeTab>
             <h2 className=" text-xl font-bold mb-2">Installation</h2>
-            <CodeBlock language="tsx" code={`npm i @gsap/react`} />
+            <CodeBlock language="tsx" code={unfoldingTextRaw.installation} />
             <h2 className=" text-xl font-bold mb-2">Usage</h2>
-            <CodeBlock
-              language="tsx"
-              code={`
-<SplitTextReveal>
-    Developer who loves building fast, accessible web apps with
-    smooth user experiences. I’m all about blending thoughtful
-    design with clean code to bring cool
-  </SplitTextReveal>
-`}
-            />
+            <CodeBlock language="tsx" code={unfoldingTextRaw.usage} />
+            <h2 className=" text-xl font-bold mb-2">Code</h2>
+            <CodeBlock language="tsx" code={unfoldingTextRaw.code} />
           </CodeTab>
         </TabLayout>
       </div>
