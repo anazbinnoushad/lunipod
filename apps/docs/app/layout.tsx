@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistSans.className} backgroundGradient`}
+        className={`${geistSans.variable} ${geistSans.className} backgroundGradient bg-no-repeat`}
       >
         <ThemeProvider
           attribute="class"

@@ -33,6 +33,8 @@ const SplitText = () => {
               />
               <h2 className=" text-xl font-bold mb-2">Usage</h2>
               <CodeBlock language="tsx" code={splitTextRevealRaw.usage} />
+              <h2 className=" text-xl font-bold mb-2">Code</h2>
+              <CodeBlock language="tsx" code={splitTextRevealRaw.code} />
             </div>
           </CodeTab>
         </TabLayout>

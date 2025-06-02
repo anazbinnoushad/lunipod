@@ -6,7 +6,11 @@
 @layer components {
   .backgroundGradient {
     /* Gradient created with https://colorfinder.app/css-tools/gradient-creator */
-    background: linear-gradient(196deg, rgba(0, 0, 0, 1) 20%, rgba(20, 20, 20, 1) 80%)
+    background: linear-gradient(196deg, rgba(0, 0, 0, 1) 20%, rgba(20, 20, 20, 1) 80%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 
 }

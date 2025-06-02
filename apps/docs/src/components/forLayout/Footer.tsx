@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="w-full h-10">
+    <div className="w-full h-10 pt-10">
       <div className="flex justify-center items-center">
         <h4 className=" p-2 text-muted-foreground font-extralight text-sm flex gap-1 items-center">
           <span>Made with</span>
@@ -12,7 +12,8 @@ const Footer = () => {
             by{" "}
             <Link
               href="https://anaz.dev"
-              className=" hover:underline underline-offset-2"
+              target="_blank"
+              className=" underline underline-offset-2"
             >
               this guy
             </Link>

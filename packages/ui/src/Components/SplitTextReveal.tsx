@@ -1,12 +1,6 @@
 "use client";
 
-import React, {
-  useRef,
-  cloneElement,
-  ReactNode,
-  ReactElement,
-  isValidElement,
-} from "react";
+import React, {useRef, ReactNode, ReactElement, isValidElement} from "react";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
@@ -131,7 +125,6 @@ export default function SplitTextReveal({
   );
 }
 
-// For clarity, define this locally if not in the .d.ts file
 interface SplitTextInstance {
   lines: Element[];
   words: Element[];
