@@ -20,7 +20,7 @@ const Sidebar = () => {
         ) : (
           <Link href={href} key={key}>
             <h4
-              className={`text-base flex gap-2 items-center font-light text-muted-foreground hover:translate-x-1 hover:text-white transition-all transform-cpu ${isActive && ` text-white`}`}
+              className={`text-base flex gap-1.5 items-center font-light text-muted-foreground hover:translate-x-1 hover:text-white transition-all transform-cpu ${isActive && ` text-white`}`}
             >
               {navItem.title}
               {navItem.badge && <Badge>{navItem.badge}</Badge>}

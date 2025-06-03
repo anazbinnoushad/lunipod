@@ -6,6 +6,7 @@ import {synthwave84} from "react-syntax-highlighter/dist/esm/styles/prism";
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
 import {Check, Copy} from "lucide-react";
+import {toast} from "sonner";
 
 interface CodeBlockProps {
   language: string;
@@ -20,6 +21,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({language, code, className}) => {
     try {
       await navigator.clipboard.writeText(code);
       setCopied(true);
+      toast("✅ Code copied successfully");
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       console.error("Copy failed", err);
