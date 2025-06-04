@@ -5,7 +5,7 @@ import gsap from "gsap";
 import {Observer} from "gsap/Observer";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import type ObserverInstance from "gsap/Observer";
-// @ts-expect-error: No defs provided
+// @ts-ignore
 import horizontalLoop from "../helpers/horizontalLoop";
 
 gsap.registerPlugin(Observer, ScrollTrigger);
@@ -23,6 +23,9 @@ export const HorizontalScrollMarquee = ({
   const marqueeTimeline = useRef<gsap.core.Timeline | null>(null);
 
   useEffect(() => {
+    const children = railRef.current?.children;
+    if (!children || typeof window === "undefined") return;
+
     const items = gsap.utils.toArray(
       railRef.current?.children || []
     ) as HTMLElement[];
