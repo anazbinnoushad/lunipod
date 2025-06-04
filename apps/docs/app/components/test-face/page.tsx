@@ -1,7 +1,11 @@
+"use client";
+
 import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
+import ScrollPreview from "@/components/Showcase/ScrollPreview";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
-import MagneticText from "@repo/ui/Components/MagneticText";
+import HorizontalScrollMarquee from "@repo/ui/Components/HorizontalScrollMarquee";
+import {useRef} from "react";
 
 const TestFace = () => {
   return (
@@ -16,7 +20,20 @@ const TestFace = () => {
         <TabLayout>
           <PreviewTab>
             <PreviewBlock>
-              <MagneticText text="OKSUNFON" />
+              <ScrollPreview>
+                {(scrollContainerRef) => (
+                  <>
+                    <div className="h-96 text-muted-foreground flex justify-center items-center">
+                      SCROLL DOWN
+                    </div>
+                    <div className="h-96 pt-96 pb-96">
+                      <HorizontalScrollMarquee
+                        scrollContainerRef={scrollContainerRef}
+                      />
+                    </div>
+                  </>
+                )}
+              </ScrollPreview>
             </PreviewBlock>
           </PreviewTab>
           <CodeTab>
