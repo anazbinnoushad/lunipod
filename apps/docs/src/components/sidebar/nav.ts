@@ -8,4 +8,5 @@ export const nav: NavItem[] = [
   {title: "Split Text", route: "split-text"},
   {title: "Unfolding Text", route: "unfolding-text", badge: "New"},
   {title: "Magnetic Text", route: "magnetic-text"},
+  {title: "Text Velocity Loop", route: "text-velocity-loop"},
 ];

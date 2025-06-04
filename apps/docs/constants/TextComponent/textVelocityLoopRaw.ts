@@ -1,3 +1,4 @@
+const code = `
 "use client";
 
 import {RefObject, useEffect, useRef} from "react";
@@ -12,12 +13,12 @@ gsap.registerPlugin(Observer, ScrollTrigger);
 
 let observer: ObserverInstance | null = null;
 
-interface HorizontalScrollMarqueeProps {
+interface TextVelocityLoopProps {
   scrollContainerRef?: RefObject<HTMLDivElement | null>;
 }
-export const HorizontalScrollMarquee = ({
+export const TextVelocityLoop = ({
   scrollContainerRef,
-}: HorizontalScrollMarqueeProps) => {
+}: TextVelocityLoopProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const railRef = useRef<HTMLDivElement>(null);
   const marqueeTimeline = useRef<gsap.core.Timeline | null>(null);
@@ -98,7 +99,6 @@ export const HorizontalScrollMarquee = ({
         );
     }
 
-    // ✅ CLEANUP
     return () => {
       scrollTrigger.kill();
       if (observer) {
@@ -128,7 +128,7 @@ export const HorizontalScrollMarquee = ({
             <h4
               className="whitespace-nowrap text-white font-black"
               style={{fontSize: 50}}
-              key={`title_${idx}`}
+              key={\`title_\${idx}\`}
             >
               Lunipod UI
             </h4>
@@ -138,4 +138,16 @@ export const HorizontalScrollMarquee = ({
   );
 };
 
-export default HorizontalScrollMarquee;
+export default TextVelocityLoop;
+
+`;
+
+export const textVelocityLoopRaw = {
+  installation: `npm i @gsap/react`,
+  usage: `
+<TextVelocityLoop
+    scrollContainerRef={scrollContainerRef}
+/>
+  `,
+  code: code,
+};

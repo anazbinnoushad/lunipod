@@ -4,12 +4,13 @@ import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import ScrollPreview from "@/components/Showcase/ScrollPreview";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import TextVelocityLoop from "@repo/ui/Components/TextVelocityLoop";
+import {textVelocityLoopRaw} from "../../../constants/TextComponent/textVelocityLoopRaw";
 
-const TestFace = () => {
+const TextVelocityLoopShowcase = () => {
   return (
     <div>
       <div>
-        <h2 className=" text-3xl font-bold mb-2">Testing Component</h2>
+        <h2 className=" text-3xl font-bold mb-2">Text Velocity Loop</h2>
         <h6 className="font-light text-muted-foreground">
           A customizable, compound modal component with animated transitions
         </h6>
@@ -39,18 +40,11 @@ const TestFace = () => {
           </PreviewTab>
           <CodeTab>
             <h2 className=" text-xl font-bold mb-2">Installation</h2>
-            <CodeBlock language="tsx" code={`npm i @gsap/react`} />
+            <CodeBlock language="tsx" code={textVelocityLoopRaw.installation} />
             <h2 className=" text-xl font-bold mb-2">Usage</h2>
-            <CodeBlock
-              language="tsx"
-              code={`
-<SplitTextReveal>
-    Developer who loves building fast, accessible web apps with
-    smooth user experiences. I’m all about blending thoughtful
-    design with clean code to bring cool
-  </SplitTextReveal>
-`}
-            />
+            <CodeBlock language="tsx" code={textVelocityLoopRaw.usage} />
+            <h2 className=" text-xl font-bold mb-2">Code</h2>
+            <CodeBlock language="tsx" code={textVelocityLoopRaw.code} />
           </CodeTab>
         </TabLayout>
       </div>
@@ -58,4 +52,4 @@ const TestFace = () => {
   );
 };
 
-export default TestFace;
+export default TextVelocityLoopShowcase;
