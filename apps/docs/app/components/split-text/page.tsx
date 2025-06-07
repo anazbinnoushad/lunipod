@@ -3,6 +3,7 @@ import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import SplitTextReveal from "@repo/ui/Components/SplitTextReveal";
 import {splitTextRevealRaw} from "../../../constants/TextComponent/SplitTextRaw";
+import SectionTitle from "@/components/Showcase/SectionTitle";
 
 const SplitText = () => {
   return (
@@ -25,11 +26,11 @@ const SplitText = () => {
             </PreviewBlock>
           </PreviewTab>
           <CodeTab>
-            <h2 className=" text-xl font-bold mb-2">Installation</h2>
+            <SectionTitle>Installation</SectionTitle>
             <CodeBlock language="tsx" code={splitTextRevealRaw.installation} />
-            <h2 className=" text-xl font-bold mb-2">Usage</h2>
+            <SectionTitle>Usage</SectionTitle>
             <CodeBlock language="tsx" code={splitTextRevealRaw.usage} />
-            <h2 className=" text-xl font-bold mb-2">Code</h2>
+            <SectionTitle>Code</SectionTitle>
             <CodeBlock language="tsx" code={splitTextRevealRaw.code} />
           </CodeTab>
         </TabLayout>
