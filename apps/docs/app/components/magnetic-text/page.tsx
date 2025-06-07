@@ -3,6 +3,7 @@ import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import MagneticText from "@repo/ui/Components/MagneticText";
 import {magneticTextRaw} from "../../../constants/TextComponent/magenticTextRaw";
+import SectionTitle from "@/components/Showcase/SectionTitle";
 
 const MagneticTextShowcase = () => {
   return (
@@ -21,11 +22,11 @@ const MagneticTextShowcase = () => {
             </PreviewBlock>
           </PreviewTab>
           <CodeTab>
-            <h2 className=" text-xl font-bold mb-2">Installation</h2>
+            <SectionTitle>Installation</SectionTitle>
             <CodeBlock language="tsx" code={magneticTextRaw.installation} />
-            <h2 className=" text-xl font-bold mb-2">Usage</h2>
+            <SectionTitle>Usage</SectionTitle>
             <CodeBlock language="tsx" code={magneticTextRaw.usage} />
-            <h2 className=" text-xl font-bold mb-2">Code</h2>
+            <SectionTitle>Code</SectionTitle>
             <CodeBlock language="tsx" code={magneticTextRaw.code} />
           </CodeTab>
         </TabLayout>

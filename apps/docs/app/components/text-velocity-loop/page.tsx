@@ -5,6 +5,7 @@ import ScrollPreview from "@/components/Showcase/ScrollPreview";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import TextVelocityLoop from "@repo/ui/Components/TextVelocityLoop";
 import {textVelocityLoopRaw} from "../../../constants/TextComponent/textVelocityLoopRaw";
+import SectionTitle from "@/components/Showcase/SectionTitle";
 
 const TextVelocityLoopShowcase = () => {
   return (
@@ -39,11 +40,11 @@ const TextVelocityLoopShowcase = () => {
             </PreviewBlock>
           </PreviewTab>
           <CodeTab>
-            <h2 className=" text-xl font-bold mb-2">Installation</h2>
+            <SectionTitle>Installation</SectionTitle>
             <CodeBlock language="tsx" code={textVelocityLoopRaw.installation} />
-            <h2 className=" text-xl font-bold mb-2">Usage</h2>
+            <SectionTitle>Usage</SectionTitle>
             <CodeBlock language="tsx" code={textVelocityLoopRaw.usage} />
-            <h2 className=" text-xl font-bold mb-2">Code</h2>
+            <SectionTitle>Code</SectionTitle>
             <CodeBlock language="tsx" code={textVelocityLoopRaw.code} />
           </CodeTab>
         </TabLayout>

@@ -5,6 +5,7 @@ import UnfoldingText from "@repo/ui/Components/UnfoldingText";
 import localFont from "next/font/local";
 import {unfoldingTextRaw} from "../../../constants/TextComponent/unfoldingTextRaw";
 import PropsTable from "@/components/Showcase/PropsTable";
+import SectionTitle from "@/components/Showcase/SectionTitle";
 
 const DrukWide = localFont({
   src: "../../fonts/FontsFree-Net-Druk-Wide-Bold.ttf",
@@ -32,11 +33,11 @@ const FlippingCard = () => {
             <PropsTable />
           </PreviewTab>
           <CodeTab>
-            <h2 className=" text-xl font-bold mb-2">Installation</h2>
+            <SectionTitle className=" mt-4">Installation</SectionTitle>
             <CodeBlock language="tsx" code={unfoldingTextRaw.installation} />
-            <h2 className=" text-xl font-bold mb-2">Usage</h2>
+            <SectionTitle className=" mt-4">Usage</SectionTitle>
             <CodeBlock language="tsx" code={unfoldingTextRaw.usage} />
-            <h2 className=" text-xl font-bold mb-2">Code</h2>
+            <SectionTitle className=" mt-4">Code</SectionTitle>
             <CodeBlock language="tsx" code={unfoldingTextRaw.code} />
           </CodeTab>
         </TabLayout>
