@@ -1,9 +1,8 @@
 "use client";
 import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
-import ScrollPreview from "@/components/Showcase/ScrollPreview";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
-import TextVelocityLoop from "@repo/ui/Components/TextVelocityLoop";
+import LiquidGlassButton from "@repo/ui/Components/LiquidGlassButton";
 
 const TestFace = () => {
   return (
@@ -14,27 +13,16 @@ const TestFace = () => {
           A customizable, compound modal component with animated transitions
         </h6>
       </div>
+      <div className=" relative"></div>
       <div>
         <TabLayout>
           <PreviewTab>
             <PreviewBlock>
-              <ScrollPreview>
-                {(scrollContainerRef) => (
-                  <>
-                    <div className="h-96 text-muted-foreground flex justify-center items-center">
-                      SCROLL DOWN
-                    </div>
-                    <div className="h-96 pt-96 pb-96">
-                      <TextVelocityLoop
-                        scrollContainerRef={scrollContainerRef}
-                      />
-                    </div>
-                    <div className="h-96 text-muted-foreground flex justify-center items-center">
-                      SCROLL UP
-                    </div>
-                  </>
-                )}
-              </ScrollPreview>
+              <div>
+                <LiquidGlassButton variant="primary">
+                  CLICK ME
+                </LiquidGlassButton>
+              </div>
             </PreviewBlock>
           </PreviewTab>
           <CodeTab>

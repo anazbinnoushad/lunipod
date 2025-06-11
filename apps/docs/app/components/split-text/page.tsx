@@ -18,11 +18,13 @@ const SplitText = () => {
         <TabLayout>
           <PreviewTab>
             <PreviewBlock>
-              <SplitTextReveal>
-                Developer who loves building fast, accessible web apps with
-                smooth user experiences. I’m all about blending thoughtful
-                design with clean code to bring cool
-              </SplitTextReveal>
+              <div className=" mx-12">
+                <SplitTextReveal>
+                  Developer who loves building fast, accessible web apps with
+                  smooth user experiences. I’m all about blending thoughtful
+                  design with clean code to bring cool
+                </SplitTextReveal>
+              </div>
             </PreviewBlock>
           </PreviewTab>
           <CodeTab>

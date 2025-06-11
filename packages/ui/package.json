@@ -33,6 +33,7 @@
     "@tailwindcss/postcss": "^4.1.7",
     "class-variance-authority": "^0.7.1",
     "gsap": "^3.13.0",
+    "lucide-react": "^0.511.0",
     "postcss": "^8.5.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
