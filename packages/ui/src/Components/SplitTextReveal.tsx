@@ -12,12 +12,21 @@ interface SplitTextRevealProps {
   children: ReactNode;
   animateOnScroll?: boolean;
   delay?: number;
+  className?: string;
+}
+
+interface SplitTextInstance {
+  lines: Element[];
+  words: Element[];
+  chars: Element[];
+  revert: () => void;
 }
 
 export default function SplitTextReveal({
   children,
   animateOnScroll = true,
   delay = 0,
+  className,
 }: SplitTextRevealProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const elementRef = useRef<HTMLElement[]>([]);
@@ -55,7 +64,7 @@ export default function SplitTextReveal({
         const textIndent = computedStyle.textIndent;
 
         if (textIndent && textIndent !== "0px") {
-          const firstLine = split.lines[0];
+          const firstLine = split.lines?.[0];
           if (firstLine instanceof HTMLElement) {
             firstLine.style.paddingLeft = textIndent;
           }
@@ -93,9 +102,7 @@ export default function SplitTextReveal({
       }
 
       return () => {
-        splitRef.current.forEach((split) => {
-          if (split?.revert) split.revert();
-        });
+        splitRef.current.forEach((split) => split?.revert?.());
       };
     },
     {
@@ -111,11 +118,12 @@ export default function SplitTextReveal({
   ) {
     return React.cloneElement(children as ReactElement<any>, {
       ref: containerRef,
+      className,
     });
   }
 
   return (
-    <div ref={containerRef} data-copy-wrapper="true">
+    <div ref={containerRef} data-copy-wrapper="true" className={className}>
       {typeof children === "string" || typeof children === "number" ? (
         <span>{children}</span>
       ) : (
@@ -123,11 +131,4 @@ export default function SplitTextReveal({
       )}
     </div>
   );
-}
-
-interface SplitTextInstance {
-  lines: Element[];
-  words: Element[];
-  chars: Element[];
-  revert: () => void;
 }
