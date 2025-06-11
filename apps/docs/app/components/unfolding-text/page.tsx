@@ -25,10 +25,12 @@ const FlippingCard = () => {
         <TabLayout>
           <PreviewTab>
             <PreviewBlock>
-              <UnfoldingText
-                text="THE PROJECT"
-                className={`${DrukWide.className}`}
-              />
+              <div className=" mx-4">
+                <UnfoldingText
+                  text="THE PROJECT"
+                  className={`${DrukWide.className}`}
+                />
+              </div>
             </PreviewBlock>
             <PropsTable />
           </PreviewTab>
