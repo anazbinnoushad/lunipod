@@ -32,7 +32,6 @@ const FlippingCard = () => {
                 />
               </div>
             </PreviewBlock>
-            <PropsTable />
           </PreviewTab>
           <CodeTab>
             <SectionTitle className=" mt-4">Installation</SectionTitle>

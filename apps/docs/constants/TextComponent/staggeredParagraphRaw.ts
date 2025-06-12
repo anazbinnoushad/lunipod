@@ -1,3 +1,4 @@
+const code = `
 "use client";
 
 import React, {useRef, ReactNode, ReactElement, isValidElement} from "react";
@@ -8,17 +9,26 @@ import {useGSAP} from "@gsap/react";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
-interface SplitTextRevealProps {
+interface StaggeredParagraphProps {
   children: ReactNode;
   animateOnScroll?: boolean;
   delay?: number;
+  className?: string;
 }
 
-export default function SplitTextReveal({
+interface SplitTextInstance {
+  lines: Element[];
+  words: Element[];
+  chars: Element[];
+  revert: () => void;
+}
+
+export default function StaggeredParagraph({
   children,
   animateOnScroll = true,
   delay = 0,
-}: SplitTextRevealProps) {
+  className,
+}: StaggeredParagraphProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const elementRef = useRef<HTMLElement[]>([]);
   const splitRef = useRef<SplitTextInstance[]>([]);
@@ -55,7 +65,7 @@ export default function SplitTextReveal({
         const textIndent = computedStyle.textIndent;
 
         if (textIndent && textIndent !== "0px") {
-          const firstLine = split.lines[0];
+          const firstLine = split.lines?.[0];
           if (firstLine instanceof HTMLElement) {
             firstLine.style.paddingLeft = textIndent;
           }
@@ -93,9 +103,7 @@ export default function SplitTextReveal({
       }
 
       return () => {
-        splitRef.current.forEach((split) => {
-          if (split?.revert) split.revert();
-        });
+        splitRef.current.forEach((split) => split?.revert?.());
       };
     },
     {
@@ -111,11 +119,12 @@ export default function SplitTextReveal({
   ) {
     return React.cloneElement(children as ReactElement<any>, {
       ref: containerRef,
+      className,
     });
   }
 
   return (
-    <div ref={containerRef} data-copy-wrapper="true">
+    <div ref={containerRef} data-copy-wrapper="true" className={className}>
       {typeof children === "string" || typeof children === "number" ? (
         <span>{children}</span>
       ) : (
@@ -125,9 +134,47 @@ export default function SplitTextReveal({
   );
 }
 
-interface SplitTextInstance {
-  lines: Element[];
-  words: Element[];
-  chars: Element[];
-  revert: () => void;
-}
+`;
+
+const propsData = [
+  {
+    property: "children",
+    type: "ReactNode",
+    default: "–",
+    description:
+      "The content to apply the staggered animation to. Typically a paragraph or text element.",
+  },
+  {
+    property: "animateOnScroll",
+    type: "boolean",
+    default: "true",
+    description:
+      "Whether the animation should be triggered when the element scrolls into view.",
+  },
+  {
+    property: "delay",
+    type: "number",
+    default: "0",
+    description: "Delay in seconds before the animation starts.",
+  },
+  {
+    property: "className",
+    type: "string",
+    default: "–",
+    description:
+      "Optional additional class names for styling the wrapper element.",
+  },
+];
+
+export const staggeredParagraphRaw = {
+  installation: `npm i @gsap/react`,
+  usage: `
+<StaggeredParagraph>
+  Developer who loves building fast, accessible web apps with
+  smooth user experiences. I’m all about blending thoughtful
+  design with clean code to bring cool
+</StaggeredParagraph>
+  `,
+  code: code,
+  props: propsData,
+};

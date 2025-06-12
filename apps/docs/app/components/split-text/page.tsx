@@ -1,11 +1,12 @@
 import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
-import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
-import SplitTextReveal from "@repo/ui/Components/SplitTextReveal";
-import {splitTextRevealRaw} from "../../../constants/TextComponent/SplitTextRaw";
 import SectionTitle from "@/components/Showcase/SectionTitle";
+import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
+import SplitText from "@repo/ui/Components/SplitText";
+import {splitTextRaw} from "../../../constants/TextComponent/SplitTextRaw";
+import PropsTable from "@/components/Showcase/PropsTable";
 
-const SplitText = () => {
+const SplitTextShowcase = () => {
   return (
     <div>
       <div>
@@ -19,21 +20,20 @@ const SplitText = () => {
           <PreviewTab>
             <PreviewBlock>
               <div className=" mx-12">
-                <SplitTextReveal>
-                  Developer who loves building fast, accessible web apps with
-                  smooth user experiences. I’m all about blending thoughtful
-                  design with clean code to bring cool
-                </SplitTextReveal>
+                <SplitText type="words" animateOnScroll={true}>
+                  <h1>This is animated by word</h1>
+                </SplitText>
               </div>
             </PreviewBlock>
+            <PropsTable data={splitTextRaw.props} />
           </PreviewTab>
           <CodeTab>
             <SectionTitle>Installation</SectionTitle>
-            <CodeBlock language="tsx" code={splitTextRevealRaw.installation} />
+            <CodeBlock language="tsx" code={splitTextRaw.installation} />
             <SectionTitle>Usage</SectionTitle>
-            <CodeBlock language="tsx" code={splitTextRevealRaw.usage} />
+            <CodeBlock language="tsx" code={splitTextRaw.usage} />
             <SectionTitle>Code</SectionTitle>
-            <CodeBlock language="tsx" code={splitTextRevealRaw.code} />
+            <CodeBlock language="tsx" code={splitTextRaw.code} />
           </CodeTab>
         </TabLayout>
       </div>
@@ -41,4 +41,4 @@ const SplitText = () => {
   );
 };
 
-export default SplitText;
+export default SplitTextShowcase;
