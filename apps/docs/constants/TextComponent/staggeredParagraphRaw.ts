@@ -136,6 +136,36 @@ export default function StaggeredParagraph({
 
 `;
 
+const propsData = [
+  {
+    property: "children",
+    type: "ReactNode",
+    default: "–",
+    description:
+      "The content to apply the staggered animation to. Typically a paragraph or text element.",
+  },
+  {
+    property: "animateOnScroll",
+    type: "boolean",
+    default: "true",
+    description:
+      "Whether the animation should be triggered when the element scrolls into view.",
+  },
+  {
+    property: "delay",
+    type: "number",
+    default: "0",
+    description: "Delay in seconds before the animation starts.",
+  },
+  {
+    property: "className",
+    type: "string",
+    default: "–",
+    description:
+      "Optional additional class names for styling the wrapper element.",
+  },
+];
+
 export const staggeredParagraphRaw = {
   installation: `npm i @gsap/react`,
   usage: `
@@ -146,4 +176,5 @@ export const staggeredParagraphRaw = {
 </StaggeredParagraph>
   `,
   code: code,
+  props: propsData,
 };

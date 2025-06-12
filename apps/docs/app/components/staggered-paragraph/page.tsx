@@ -4,6 +4,7 @@ import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import StaggeredParagraph from "@repo/ui/Components/StaggeredParagraph";
 import {staggeredParagraphRaw} from "../../../constants/TextComponent/staggeredParagraphRaw";
 import SectionTitle from "@/components/Showcase/SectionTitle";
+import PropsTable from "@/components/Showcase/PropsTable";
 
 const StaggeredParagraphShowcase = () => {
   return (
@@ -26,6 +27,7 @@ const StaggeredParagraphShowcase = () => {
                 </StaggeredParagraph>
               </div>
             </PreviewBlock>
+            <PropsTable data={staggeredParagraphRaw.props} />
           </PreviewTab>
           <CodeTab>
             <SectionTitle>Installation</SectionTitle>
