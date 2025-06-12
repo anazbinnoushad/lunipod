@@ -4,6 +4,7 @@ import SectionTitle from "@/components/Showcase/SectionTitle";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import SplitText from "@repo/ui/Components/SplitText";
 import {splitTextRaw} from "../../../constants/TextComponent/SplitTextRaw";
+import PropsTable from "@/components/Showcase/PropsTable";
 
 const SplitTextShowcase = () => {
   return (
@@ -24,6 +25,7 @@ const SplitTextShowcase = () => {
                 </SplitText>
               </div>
             </PreviewBlock>
+            <PropsTable data={splitTextRaw.props} />
           </PreviewTab>
           <CodeTab>
             <SectionTitle>Installation</SectionTitle>

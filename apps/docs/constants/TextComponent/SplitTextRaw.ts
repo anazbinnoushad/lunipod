@@ -189,6 +189,83 @@ export default function RealSplitText({
 
 `;
 
+export const propsData = [
+  {
+    property: "children",
+    type: "ReactNode",
+    default: "–",
+    description:
+      "Content to be split and animated. Can be a single text node or any valid React element.",
+  },
+  {
+    property: "type",
+    type: `"lines" | "words" | "chars" | "lines,words,chars"`,
+    default: '"lines"',
+    description:
+      'Specifies how the text should be split. Can be any combination of "lines", "words", and "chars".',
+  },
+  {
+    property: "animateOnScroll",
+    type: "boolean",
+    default: "true",
+    description:
+      "Controls whether the animation should be triggered on scroll. If false, animation starts immediately.",
+  },
+  {
+    property: "delay",
+    type: "number",
+    default: "0",
+    description: "Delay (in seconds) before the animation begins.",
+  },
+  {
+    property: "duration",
+    type: "number",
+    default: "1",
+    description: "Duration (in seconds) of the animation for each element.",
+  },
+  {
+    property: "stagger",
+    type: "number",
+    default: "0.1",
+    description:
+      "Amount of delay (in seconds) between each element's animation start.",
+  },
+  {
+    property: "ease",
+    type: "string",
+    default: '"power4.out"',
+    description:
+      "The easing function to use for the animation. Accepts any valid GSAP easing string.",
+  },
+  {
+    property: "triggerStart",
+    type: "string",
+    default: '"top 75%"',
+    description:
+      "ScrollTrigger start value. Defines when the animation should start relative to the viewport.",
+  },
+  {
+    property: "triggerEnd",
+    type: "string",
+    default: '"bottom top"',
+    description:
+      "ScrollTrigger end value. Defines when the animation should end relative to the viewport.",
+  },
+  {
+    property: "once",
+    type: "boolean",
+    default: "true",
+    description:
+      "If true, the scroll-based animation will only occur once when the element enters the viewport.",
+  },
+  {
+    property: "className",
+    type: "string",
+    default: '""',
+    description: "CSS class for styling the wrapper or target element.",
+  },
+];
+
 export const splitTextRaw = {
   installation: `npm i @gsap/react`,
   usage: `
@@ -199,4 +276,5 @@ export const splitTextRaw = {
 </StaggeredParagraph>
   `,
   code: code,
+  props: propsData,
 };
