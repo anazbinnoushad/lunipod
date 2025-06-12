@@ -1,3 +1,4 @@
+const code = `
 "use client";
 
 import React, {useRef, ReactNode, ReactElement, isValidElement} from "react";
@@ -8,7 +9,7 @@ import {useGSAP} from "@gsap/react";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
-interface SplitTextRevealProps {
+interface SplitTextProps {
   children: ReactNode;
   type?: "lines" | "words" | "chars" | "lines,words,chars";
   animateOnScroll?: boolean;
@@ -29,7 +30,7 @@ interface SplitTextInstance {
   revert: () => void;
 }
 
-export default function RealSplitTextReveal({
+export default function RealSplitText({
   children,
   type = "lines",
   animateOnScroll = true,
@@ -41,7 +42,7 @@ export default function RealSplitTextReveal({
   triggerEnd = "bottom top",
   once = true,
   className,
-}: SplitTextRevealProps) {
+}: SplitTextProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const elementRef = useRef<HTMLElement[]>([]);
   const splitRef = useRef<SplitTextInstance[]>([]);
@@ -185,3 +186,17 @@ export default function RealSplitTextReveal({
     </div>
   );
 }
+
+`;
+
+export const splitTextRaw = {
+  installation: `npm i @gsap/react`,
+  usage: `
+<StaggeredParagraph>
+  Developer who loves building fast, accessible web apps with
+  smooth user experiences. I’m all about blending thoughtful
+  design with clean code to bring cool
+</StaggeredParagraph>
+  `,
+  code: code,
+};
