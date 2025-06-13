@@ -4,6 +4,7 @@ import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import MagneticText from "@repo/ui/Components/MagneticText";
 import {magneticTextRaw} from "../../../constants/TextComponent/magenticTextRaw";
 import SectionTitle from "@/components/Showcase/SectionTitle";
+import PropsTable from "@/components/Showcase/PropsTable";
 
 const MagneticTextShowcase = () => {
   return (
@@ -20,6 +21,7 @@ const MagneticTextShowcase = () => {
             <PreviewBlock>
               <MagneticText text="OKSUNFON" />
             </PreviewBlock>
+            <PropsTable data={magneticTextRaw.props} />
           </PreviewTab>
           <CodeTab>
             <SectionTitle>Installation</SectionTitle>
