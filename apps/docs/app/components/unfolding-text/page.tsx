@@ -32,6 +32,7 @@ const FlippingCard = () => {
                 />
               </div>
             </PreviewBlock>
+            <PropsTable data={unfoldingTextRaw.props} />
           </PreviewTab>
           <CodeTab>
             <SectionTitle className=" mt-4">Installation</SectionTitle>

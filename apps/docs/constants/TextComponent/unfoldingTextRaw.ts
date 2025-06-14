@@ -67,6 +67,51 @@ export default UnfoldingText;
 
 `;
 
+const propsData = [
+  {
+    property: "text",
+    type: "string",
+    default: "–",
+    description:
+      "The text content to display and animate with the unfolding effect.",
+  },
+  {
+    property: "fontSize",
+    type: "number",
+    default: "80",
+    description:
+      "Font size of the animated text, in pixels. This adjusts the overall size of the text.",
+  },
+  {
+    property: "initialRotateY",
+    type: "number",
+    default: "40",
+    description:
+      "The initial Y-axis rotation (in degrees) from which the text unfolds.",
+  },
+  {
+    property: "strokeColor",
+    type: "string",
+    default: '"white"',
+    description:
+      "The stroke color applied to the text initially and after the animation completes.",
+  },
+  {
+    property: "fillColor",
+    type: "string",
+    default: '"transparent"',
+    description:
+      "The fill color of the text before the animation finishes. Used in combination with strokeColor.",
+  },
+  {
+    property: "className",
+    type: "string",
+    default: '""',
+    description:
+      "Additional custom or Tailwind CSS class names to style the text element.",
+  },
+];
+
 export const unfoldingTextRaw = {
   installation: `npm i @gsap/react`,
   usage: `
@@ -76,4 +121,5 @@ export const unfoldingTextRaw = {
 />
     `,
   code: code,
+  props: propsData,
 };
