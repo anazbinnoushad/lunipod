@@ -1,6 +1,6 @@
 "use client";
 
-import {RefObject, useEffect, useRef} from "react";
+import {RefObject, useEffect, useRef, ReactNode} from "react";
 import gsap from "gsap";
 import {Observer} from "gsap/Observer";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
@@ -14,9 +14,24 @@ let observer: ObserverInstance | null = null;
 
 interface TextVelocityLoopProps {
   scrollContainerRef?: RefObject<HTMLDivElement | null>;
+  items?: string[];
+  repeatCount?: number;
+  speed?: number;
+  reversed?: boolean;
+  fontSize?: number;
+  className?: string;
+  renderItem?: (item: string, index: number) => ReactNode;
 }
+
 export const TextVelocityLoop = ({
   scrollContainerRef,
+  items = ["Lunipod UI"],
+  repeatCount = 5,
+  speed = 0.8,
+  reversed = true,
+  fontSize = 50,
+  className = "",
+  renderItem,
 }: TextVelocityLoopProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const railRef = useRef<HTMLDivElement>(null);
@@ -26,20 +41,15 @@ export const TextVelocityLoop = ({
     const children = railRef.current?.children;
     if (!children || typeof window === "undefined") return;
 
-    const items = gsap.utils.toArray(
-      railRef.current?.children || []
-    ) as HTMLElement[];
+    const elements = gsap.utils.toArray(children) as HTMLElement[];
 
     ScrollTrigger.refresh();
-    const scroller =
-      scrollContainerRef && scrollContainerRef.current
-        ? scrollContainerRef.current
-        : window;
+    const scroller = scrollContainerRef?.current || window;
 
-    const tl = horizontalLoop(items, {
+    const tl = horizontalLoop(elements, {
       repeat: -1,
-      speed: 0.8,
-      reversed: true,
+      speed,
+      reversed,
     });
 
     marqueeTimeline.current = tl;
@@ -51,15 +61,14 @@ export const TextVelocityLoop = ({
       scroller,
       start: "center bottom+=50%",
       end: "bottom bottom-=40%",
-      onEnter: () => startObserver(),
-      onEnterBack: () => startObserver(),
-      onLeave: () => stopObserver(),
-      onLeaveBack: () => stopObserver(),
+      onEnter: startObserver,
+      onEnterBack: startObserver,
+      onLeave: stopObserver,
+      onLeaveBack: stopObserver,
     });
 
     function startObserver() {
       if (observer) return;
-
       observer = Observer.create({
         target: scroller,
         type: "scroll",
@@ -79,7 +88,6 @@ export const TextVelocityLoop = ({
 
     function changeDirection(direction: 1 | -1) {
       if (!marqueeTimeline.current) return;
-
       if (speedTween) speedTween.kill();
 
       speedTween = gsap.timeline();
@@ -98,41 +106,38 @@ export const TextVelocityLoop = ({
         );
     }
 
-    // ✅ CLEANUP
     return () => {
       scrollTrigger.kill();
-      if (observer) {
-        observer.kill();
-        observer = null;
-      }
-      if (marqueeTimeline.current) {
-        marqueeTimeline.current.kill();
-        marqueeTimeline.current = null;
-      }
-      if (speedTween) {
-        speedTween.kill();
-        speedTween = null;
-      }
+      stopObserver();
+      marqueeTimeline.current?.kill();
+      marqueeTimeline.current = null;
+      speedTween?.kill();
+      speedTween = null;
     };
-  }, [scrollContainerRef?.current]);
+  }, [scrollContainerRef?.current, items, speed, reversed]);
 
   return (
     <div
       ref={containerRef}
-      className="w-full h-fit flex items-center overflow-hidden scrolling-text"
+      className={`w-full h-fit flex items-center overflow-hidden scrolling-text ${className}`}
     >
       <div ref={railRef} className="flex gap-5">
-        {Array(5)
-          .fill("_")
-          .map((_, idx) => (
-            <h4
-              className="whitespace-nowrap text-white font-black"
-              style={{fontSize: 50}}
-              key={`title_${idx}`}
-            >
-              Lunipod UI
-            </h4>
-          ))}
+        {Array(repeatCount)
+          .fill(items)
+          .flat()
+          .map((item, idx) =>
+            renderItem ? (
+              renderItem(item, idx)
+            ) : (
+              <h4
+                className="whitespace-nowrap text-white font-black"
+                style={{fontSize}}
+                key={`title_${idx}`}
+              >
+                {item}
+              </h4>
+            )
+          )}
       </div>
     </div>
   );
