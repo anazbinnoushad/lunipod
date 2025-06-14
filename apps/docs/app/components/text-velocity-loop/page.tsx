@@ -6,6 +6,7 @@ import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import TextVelocityLoop from "@repo/ui/Components/TextVelocityLoop";
 import {textVelocityLoopRaw} from "../../../constants/TextComponent/textVelocityLoopRaw";
 import SectionTitle from "@/components/Showcase/SectionTitle";
+import PropsTable from "@/components/Showcase/PropsTable";
 
 const TextVelocityLoopShowcase = () => {
   return (
@@ -38,6 +39,7 @@ const TextVelocityLoopShowcase = () => {
                 )}
               </ScrollPreview>
             </PreviewBlock>
+            <PropsTable data={textVelocityLoopRaw.props} />
           </PreviewTab>
           <CodeTab>
             <SectionTitle>Installation</SectionTitle>

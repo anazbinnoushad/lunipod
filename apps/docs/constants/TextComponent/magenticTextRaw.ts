@@ -87,10 +87,28 @@ export default function MagneticText({
 }
 `;
 
+const propsData = [
+  {
+    property: "text",
+    type: "string",
+    default: "–",
+    description:
+      "The text content to be split and animated with magnetic draggable effects applied to each character.",
+  },
+  {
+    property: "className",
+    type: "string",
+    default: '""',
+    description:
+      "Optional Tailwind CSS or custom class names to style the container section.",
+  },
+];
+
 export const magneticTextRaw = {
   installation: `npm i @gsap/react`,
   usage: `
  <MagneticText text="OKSUNFON" />
   `,
   code: code,
+  props: propsData,
 };
