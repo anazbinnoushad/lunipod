@@ -170,9 +170,12 @@ export const staggeredParagraphRaw = {
   installation: `npm i @gsap/react`,
   usage: `
 <StaggeredParagraph>
-  Developer who loves building fast, accessible web apps with
-  smooth user experiences. I’m all about blending thoughtful
-  design with clean code to bring cool
+  Lunipod UI is a sleek component library built with Tailwind
+  CSS and GSAP, offering ready-to-use animated UI elements for
+  modern web projects. Designed for effortless copy-paste
+  integration, each component is responsive, customizable, and
+  visually dynamic—perfect for developers who want clean design
+  and smooth animations without extra setup.
 </StaggeredParagraph>
   `,
   code: code,
