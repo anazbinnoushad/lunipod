@@ -73,7 +73,6 @@ export default function RealSplitText({
 
         splitRef.current.push(split);
 
-        // text-indent fix for lines
         if (type.includes("lines")) {
           const computedStyle = window.getComputedStyle(element);
           const textIndent = computedStyle.textIndent;
@@ -120,10 +119,18 @@ export default function RealSplitText({
         }
       });
 
-      gsap.set(elementsToAnimate.current, {y: "100%"});
+      // Initial animation state
+      gsap.set(elementsToAnimate.current, {
+        y: "100%",
+        opacity: 0,
+        rotateX: 5,
+        transformOrigin: "top center",
+      });
 
       const animationProps = {
         y: "0%",
+        opacity: 1,
+        rotateX: 0,
         delay,
         duration,
         stagger,
