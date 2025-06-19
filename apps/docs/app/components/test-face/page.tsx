@@ -2,7 +2,7 @@
 import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
-import DraggableLetters from "@repo/ui/Components/DraggableLetters";
+import DraggableLetters from "@repo/ui/components/DraggableLetters";
 
 const TestFace = () => {
   return (

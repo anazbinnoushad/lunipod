@@ -1,7 +1,7 @@
 import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
-import MagneticText from "@repo/ui/Components/MagneticText";
+import MagneticText from "@repo/ui/components/MagneticText";
 import {magneticTextRaw} from "../../../constants/TextComponent/magenticTextRaw";
 import SectionTitle from "@/components/Showcase/SectionTitle";
 import PropsTable from "@/components/Showcase/PropsTable";
