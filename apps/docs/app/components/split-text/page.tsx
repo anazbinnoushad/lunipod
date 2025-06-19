@@ -2,7 +2,7 @@ import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import SectionTitle from "@/components/Showcase/SectionTitle";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
-import SplitText from "@repo/ui/Components/SplitText";
+import SplitText from "@repo/ui/components/SplitText";
 import {splitTextRaw} from "../../../constants/TextComponent/SplitTextRaw";
 import PropsTable from "@/components/Showcase/PropsTable";
 

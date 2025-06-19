@@ -1,7 +1,7 @@
 import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
-import StaggeredParagraph from "@repo/ui/Components/StaggeredParagraph";
+import StaggeredParagraph from "@repo/ui/components/StaggeredParagraph";
 import {staggeredParagraphRaw} from "../../../constants/TextComponent/staggeredParagraphRaw";
 import SectionTitle from "@/components/Showcase/SectionTitle";
 import PropsTable from "@/components/Showcase/PropsTable";

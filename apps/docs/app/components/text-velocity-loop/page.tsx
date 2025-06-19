@@ -3,7 +3,7 @@ import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import ScrollPreview from "@/components/Showcase/ScrollPreview";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
-import TextVelocityLoop from "@repo/ui/Components/TextVelocityLoop";
+import TextVelocityLoop from "@repo/ui/components/TextVelocityLoop";
 import {textVelocityLoopRaw} from "../../../constants/TextComponent/textVelocityLoopRaw";
 import SectionTitle from "@/components/Showcase/SectionTitle";
 import PropsTable from "@/components/Showcase/PropsTable";
