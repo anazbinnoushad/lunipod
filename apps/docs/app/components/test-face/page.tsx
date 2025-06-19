@@ -2,7 +2,7 @@
 import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
-import DraggableText from "@repo/ui/Components/DraggableText";
+import DraggableLetters from "@repo/ui/Components/DraggableLetters";
 
 const TestFace = () => {
   return (
@@ -18,7 +18,7 @@ const TestFace = () => {
         <TabLayout>
           <PreviewTab>
             <PreviewBlock>
-              <DraggableText text="LUNIPOD" />
+              <DraggableLetters text="LUNIPOD" />
             </PreviewBlock>
           </PreviewTab>
           <CodeTab>

@@ -12,10 +12,9 @@ import Draggable from "gsap/Draggable";
 
 gsap.registerPlugin(Draggable);
 
-interface DraggableTextProps {
+interface DraggableLettersProps {
   text: string;
   direction?: "x" | "y" | "both";
-  letterWidth?: number;
   spacing?: number;
   verticalCenter?: boolean;
   containerClassName?: string;
@@ -31,10 +30,9 @@ type LetterData = {
   left: number;
 };
 
-const DraggableText: React.FC<DraggableTextProps> = ({
+const DraggableLetters: React.FC<DraggableLettersProps> = ({
   text,
   direction = "both",
-  letterWidth = 64,
   spacing = 12,
   verticalCenter = true,
   containerClassName = "",
@@ -44,26 +42,38 @@ const DraggableText: React.FC<DraggableTextProps> = ({
   onDragEnd,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const letterRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [letters, setLetters] = useState<LetterData[]>([]);
 
   useLayoutEffect(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || letterRefs.current.length === 0) return;
 
     const containerWidth = containerRef.current.offsetWidth;
-    const totalWidth = text.length * (letterWidth + spacing) - spacing;
+    const widths: number[] = text
+      .split("")
+      .map((_, i) => letterRefs.current[i]?.offsetWidth ?? 0);
+
+    const totalWidth =
+      widths.reduce((sum, w) => sum + w, 0) + spacing * (text.length - 1);
     const startX = (containerWidth - totalWidth) / 2;
     const top = verticalCenter
       ? containerRef.current.offsetHeight / 2 - 32
       : 100;
 
-    const initialLetters = [...text].map((char, i) => ({
-      char,
-      top,
-      left: startX + i * (letterWidth + spacing),
-    }));
+    const positions: LetterData[] = [];
+    let currentLeft = startX;
 
-    setLetters(initialLetters);
-  }, [text, letterWidth, spacing, verticalCenter]);
+    text.split("").forEach((char, i) => {
+      positions.push({
+        char,
+        top,
+        left: currentLeft,
+      });
+      currentLeft += (widths[i] ?? 0) + spacing;
+    });
+
+    setLetters(positions);
+  }, [text, spacing, verticalCenter]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -93,10 +103,26 @@ const DraggableText: React.FC<DraggableTextProps> = ({
       className={`relative h-full w-full overflow-hidden rounded-lg p-6 ${containerClassName}`}
       style={containerStyle}
     >
+      {/* Hidden measuring layer */}
+      <div className="absolute top-0 left-0 opacity-0 pointer-events-none">
+        {text.split("").map((char, idx) => (
+          <div
+            key={`measure-${idx}`}
+            ref={(el) => {
+              letterRefs.current[idx] = el;
+            }}
+            className="inline-block px-4 py-2 text-7xl font-bold"
+          >
+            {char}
+          </div>
+        ))}
+      </div>
+
+      {/* Visible draggable letters */}
       {letters.map((item, idx) => (
         <div
-          key={idx}
-          className={`draggable-letter absolute cursor-move px-4 py-2 text-7xl font-bold text-white shadow-lg rounded-md ${letterClassName}`}
+          key={`letter-${idx}`}
+          className={`draggable-letter absolute cursor-move px-4 py-2 text-7xl font-bold text-white  rounded-md ${letterClassName}`}
           style={{
             top: `${item.top}px`,
             left: `${item.left}px`,
@@ -109,4 +135,4 @@ const DraggableText: React.FC<DraggableTextProps> = ({
   );
 };
 
-export default DraggableText;
+export default DraggableLetters;
