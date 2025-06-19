@@ -10,4 +10,5 @@ export const nav: NavItem[] = [
   {title: "Magnetic Text", route: "magnetic-text"},
   {title: "Text Velocity Loop", route: "text-velocity-loop"},
   {title: "Staggered Paragraph", route: "staggered-paragraph", badge: "New"},
+  {title: "Draggable Letters", route: "draggable-letters", badge: "New"},
 ];
