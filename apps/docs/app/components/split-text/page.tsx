@@ -5,16 +5,15 @@ import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import SplitText from "@repo/ui/components/SplitText";
 import {splitTextRaw} from "../../../constants/TextComponent/SplitTextRaw";
 import PropsTable from "@/components/Showcase/PropsTable";
+import PageHeader from "@/components/Showcase/PageHeader";
 
 const SplitTextShowcase = () => {
   return (
     <div>
-      <div>
-        <h2 className=" text-3xl font-bold mb-2">Split Text</h2>
-        <h6 className="font-light text-muted-foreground">
-          A customizable, compound modal component with animated transitions
-        </h6>
-      </div>
+      <PageHeader
+        heading="Split Text"
+        description="A powerful text animation component that splits content into lines, words, or characters and animates them with GSAP."
+      />
       <div>
         <TabLayout>
           <PreviewTab>

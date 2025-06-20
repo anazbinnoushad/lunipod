@@ -6,6 +6,7 @@ import localFont from "next/font/local";
 import {unfoldingTextRaw} from "../../../constants/TextComponent/unfoldingTextRaw";
 import PropsTable from "@/components/Showcase/PropsTable";
 import SectionTitle from "@/components/Showcase/SectionTitle";
+import PageHeader from "@/components/Showcase/PageHeader";
 
 const DrukWide = localFont({
   src: "../../fonts/FontsFree-Net-Druk-Wide-Bold.ttf",
@@ -15,12 +16,10 @@ const DrukWide = localFont({
 const FlippingCard = () => {
   return (
     <div>
-      <div>
-        <h2 className=" text-3xl font-bold mb-2">Unfolding Text</h2>
-        <h6 className="font-light text-muted-foreground">
-          A customizable, compound modal component with animated transitions
-        </h6>
-      </div>
+      <PageHeader
+        heading="Unfolding Text"
+        description="A 3D-style text animation that unfolds along the Y-axis using GSAP with customizable stroke, fill, and rotation for dramatic typographic reveals."
+      />
       <div>
         <TabLayout>
           <PreviewTab>

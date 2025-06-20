@@ -7,16 +7,15 @@ import TextVelocityLoop from "@repo/ui/components/TextVelocityLoop";
 import {textVelocityLoopRaw} from "../../../constants/TextComponent/textVelocityLoopRaw";
 import SectionTitle from "@/components/Showcase/SectionTitle";
 import PropsTable from "@/components/Showcase/PropsTable";
+import PageHeader from "@/components/Showcase/PageHeader";
 
 const TextVelocityLoopShowcase = () => {
   return (
     <div>
-      <div>
-        <h2 className=" text-3xl font-bold mb-2">Text Velocity Loop</h2>
-        <h6 className="font-light text-muted-foreground">
-          A customizable, compound modal component with animated transitions
-        </h6>
-      </div>
+      <PageHeader
+        heading="Text Velocity Loop"
+        description="A responsive horizontal text marquee that reacts to scroll direction and speed using GSAP."
+      />
       <div>
         <TabLayout>
           <PreviewTab>

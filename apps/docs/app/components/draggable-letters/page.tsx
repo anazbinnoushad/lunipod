@@ -10,7 +10,10 @@ import CodeBlock from "@/components/Showcase/CodeBlock";
 const DraggableLettersShowcase = () => {
   return (
     <div>
-      <PageHeader heading="Draggable Letters" description="" />
+      <PageHeader
+        heading="Draggable Letters"
+        description="A playful component that makes each letter of a string draggable using GSAP. Customizable direction, spacing, and drag events. Ideal for interactive titles or creative UIs."
+      />
       <div>
         <TabLayout>
           <PreviewTab>
