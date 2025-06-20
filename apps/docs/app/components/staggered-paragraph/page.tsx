@@ -5,16 +5,15 @@ import StaggeredParagraph from "@repo/ui/components/StaggeredParagraph";
 import {staggeredParagraphRaw} from "../../../constants/TextComponent/staggeredParagraphRaw";
 import SectionTitle from "@/components/Showcase/SectionTitle";
 import PropsTable from "@/components/Showcase/PropsTable";
+import PageHeader from "@/components/Showcase/PageHeader";
 
 const StaggeredParagraphShowcase = () => {
   return (
     <div>
-      <div>
-        <h2 className=" text-3xl font-bold mb-2">Staggered Paragraph</h2>
-        <h6 className="font-light text-muted-foreground">
-          A customizable, compound modal component with animated transitions
-        </h6>
-      </div>
+      <PageHeader
+        heading="Staggered Paragraph"
+        description="Reveals paragraph lines with smooth staggered animations using GSAP. Ideal for scroll-triggered content reveals."
+      />
       <div>
         <TabLayout>
           <PreviewTab>

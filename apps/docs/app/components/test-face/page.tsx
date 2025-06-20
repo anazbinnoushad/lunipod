@@ -10,7 +10,7 @@ const TestFace = () => {
       <div>
         <h2 className=" text-3xl font-bold mb-2">Testing Component</h2>
         <h6 className="font-light text-muted-foreground">
-          A customizable, compound modal component with animated transitions
+          TEST COMPONENTS HERE
         </h6>
       </div>
       <div className=" relative"></div>

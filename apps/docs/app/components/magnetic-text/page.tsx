@@ -5,16 +5,15 @@ import MagneticText from "@repo/ui/components/MagneticText";
 import {magneticTextRaw} from "../../../constants/TextComponent/magenticTextRaw";
 import SectionTitle from "@/components/Showcase/SectionTitle";
 import PropsTable from "@/components/Showcase/PropsTable";
+import PageHeader from "@/components/Showcase/PageHeader";
 
 const MagneticTextShowcase = () => {
   return (
     <div>
-      <div>
-        <h2 className=" text-3xl font-bold mb-2">Magnetic Text</h2>
-        <h6 className="font-light text-muted-foreground">
-          A customizable, compound modal component with animated transitions
-        </h6>
-      </div>
+      <PageHeader
+        heading="Magnetic Text"
+        description="An animated, draggable text component where each letter bursts into view and reacts to drag interactions with inertia and elasticity."
+      />
       <div>
         <TabLayout>
           <PreviewTab>
