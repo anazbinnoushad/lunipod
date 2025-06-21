@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 
@@ -15,24 +15,31 @@ const CountUpLoading: React.FC<CountUpLoadingProps> = ({
 }) => {
   const [progress, setProgress] = useState(0);
   const [isReady, setIsReady] = useState(false);
+  const [textWidth, setTextWidth] = useState(0);
 
   const containerRef = useRef<HTMLDivElement>(null);
-  const textFillRef = useRef<SVGRectElement>(null);
-  const textMaskRef = useRef<SVGTextElement>(null);
+  const textRef = useRef<SVGTextElement>(null);
+  const rectRef = useRef<SVGRectElement>(null);
+
+  useEffect(() => {
+    if (textRef.current) {
+      const bbox = textRef.current.getBBox();
+      setTextWidth(bbox.width);
+    }
+  }, [progress]);
 
   useGSAP(
     () => {
-      if (textFillRef.current) {
-        gsap.to(textFillRef.current, {
-          width: `${progress}%`,
+      if (rectRef.current) {
+        gsap.to(rectRef.current, {
+          width: (textWidth * progress) / 100,
           duration: 0.4,
           ease: "power1.out",
         });
       }
     },
-    {dependencies: [progress]}
+    {dependencies: [progress, textWidth]}
   );
-  console.log(progress);
 
   useGSAP(
     () => {
@@ -57,12 +64,12 @@ const CountUpLoading: React.FC<CountUpLoadingProps> = ({
       interval = setInterval(() => {
         setProgress((prev) => {
           const next = prev + (prev < 50 ? 1 : prev > 80 ? 0.5 : 1);
-          if (next >= 100) {
+          if (next >= 99) {
             clearInterval(interval);
             const elapsed = Date.now() - startTime;
             const delay = Math.max(0, minimumDisplayTime - elapsed);
             setTimeout(() => setIsReady(true), delay);
-            return 100;
+            return 99;
           }
           return next;
         });
@@ -70,14 +77,13 @@ const CountUpLoading: React.FC<CountUpLoadingProps> = ({
     };
 
     simulateProgress();
-
     return () => clearInterval(interval);
   }, [minimumDisplayTime]);
 
   return (
     <div
       ref={containerRef}
-      className=" w-full h-full z-50 flex items-center justify-center bg-background text-white"
+      className="w-full h-full z-50 flex items-center justify-center bg-background text-white"
     >
       <svg
         width="100%"
@@ -88,6 +94,7 @@ const CountUpLoading: React.FC<CountUpLoadingProps> = ({
         <defs>
           <mask id="fill-mask">
             <text
+              ref={textRef}
               x="50%"
               y="50%"
               dominantBaseline="middle"
@@ -102,8 +109,8 @@ const CountUpLoading: React.FC<CountUpLoadingProps> = ({
         </defs>
 
         <rect
-          ref={textFillRef}
-          x="0"
+          ref={rectRef}
+          x={500 - textWidth / 2}
           y="0"
           height="100%"
           width="0"
