@@ -1,3 +1,4 @@
+const code = `
 "use client";
 
 import React, {useEffect, useRef, useState} from "react";
@@ -139,3 +140,38 @@ const CountUpLoading: React.FC<CountUpLoadingProps> = ({
 };
 
 export default CountUpLoading;
+
+`;
+
+const propsData = [
+  {
+    property: "onLoadingComplete",
+    type: "() => void",
+    default: "undefined",
+    description:
+      "Callback function that fires once the count-up animation completes and the fade-out transition (if enabled) finishes.",
+  },
+  {
+    property: "minimumDisplayTime",
+    type: "number",
+    default: "3000",
+    description:
+      "Minimum time in milliseconds the loading screen should remain visible, regardless of progress speed.",
+  },
+  {
+    property: "fadeOut",
+    type: "boolean",
+    default: "true",
+    description:
+      "If true, the loading component will smoothly fade out once loading is complete.",
+  },
+];
+
+export const countUpLoadingRaw = {
+  installation: `npm i @gsap/react`,
+  usage: `
+<CountUpLoading />
+  `,
+  code: code,
+  props: propsData,
+};
