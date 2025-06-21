@@ -2,7 +2,7 @@
 import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
-import DraggableLetters from "@repo/ui/components/DraggableLetters";
+import CountUpLoading from "@repo/ui/components/CountUpLoading";
 
 const TestFace = () => {
   return (
@@ -18,7 +18,7 @@ const TestFace = () => {
         <TabLayout>
           <PreviewTab>
             <PreviewBlock>
-              <DraggableLetters text="LUNIPOD" />
+              <CountUpLoading onLoadingComplete={() => {}} />
             </PreviewBlock>
           </PreviewTab>
           <CodeTab>
