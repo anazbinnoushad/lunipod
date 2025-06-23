@@ -2,7 +2,7 @@
 import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
-import CountUpLoading from "@repo/ui/components/CountUpLoading";
+import FlipCard from "@repo/ui/components/FlipCard";
 
 const TestFace = () => {
   return (
@@ -18,7 +18,7 @@ const TestFace = () => {
         <TabLayout>
           <PreviewTab>
             <PreviewBlock>
-              <CountUpLoading onLoadingComplete={() => {}} />
+              <FlipCard />
             </PreviewBlock>
           </PreviewTab>
           <CodeTab>
