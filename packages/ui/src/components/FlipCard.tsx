@@ -1,57 +1,57 @@
 "use client";
 
-import {useRef, useState} from "react";
+import {ReactElement, useRef} from "react";
 import {gsap} from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {useGSAP} from "@gsap/react";
 
-const FlipCard = () => {
-  const innerRef = useRef<HTMLDivElement>(null);
-  const [flipped, setFlipped] = useState(false);
+gsap.registerPlugin(ScrollTrigger);
+interface FlipCardProps {
+  frontFace: React.ReactNode;
+  backFace: React.ReactNode;
+}
+const FlipCard = ({frontFace, backFace}: FlipCardProps) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleFlip = () => {
-    if (!innerRef.current) return;
+  useGSAP(() => {
+    const card = cardRef.current;
+    const container = containerRef.current;
 
-    gsap.to(innerRef.current, {
-      rotateY: flipped ? 0 : 180,
-      duration: 0.8,
-      ease: "power2.inOut",
+    if (!card || !container) return;
+
+    gsap.to(card, {
+      rotationY: 180,
+      ease: "none",
+      scrollTrigger: {
+        trigger: container,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+        pin: true,
+        markers: false, // Set to true for debugging
+      },
     });
-
-    setFlipped(!flipped);
-  };
+  }, []);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="w-80 h-52 [perspective:1000px]">
+    <div
+      ref={containerRef}
+      className="min-h-screen flex items-center justify-center p-4"
+    >
+      <div className="relative w-full max-w-sm h-[600px] perspective-1000">
         <div
-          ref={innerRef}
-          className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d]"
+          ref={cardRef}
+          className="relative w-full h-full transition-transform duration-100 transform-style-preserve-3d"
         >
-          {/* Front Face */}
-          <div className="absolute inset-0 bg-white border rounded-xl p-6 [backface-visibility:hidden] shadow-md flex flex-col justify-between">
-            <div>
-              <h3 className="text-xl font-bold text-gray-800">Front Side</h3>
-              <p className="text-gray-500">Click below to flip</p>
-            </div>
-            <button
-              onClick={handleFlip}
-              className="mt-4 py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700"
-            >
-              Flip to Back
-            </button>
+          {/* Front Side */}
+          <div className="absolute inset-0 w-full h-[500px] backface-hidden">
+            {frontFace}
           </div>
 
-          {/* Back Face */}
-          <div className="absolute inset-0 bg-gray-800 border rounded-xl p-6 [backface-visibility:hidden] rotate-y-180 shadow-md flex flex-col justify-between text-white">
-            <div>
-              <h3 className="text-xl font-bold">Back Side</h3>
-              <p className="text-gray-300">Click below to flip back</p>
-            </div>
-            <button
-              onClick={handleFlip}
-              className="mt-4 py-2 px-4 bg-indigo-500 rounded hover:bg-indigo-600"
-            >
-              Flip to Front
-            </button>
+          {/* Back Side */}
+          <div className="absolute inset-0 w-full h-[500px] backface-hidden rotate-y-180">
+            {backFace}
           </div>
         </div>
       </div>
