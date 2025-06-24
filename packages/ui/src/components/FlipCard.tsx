@@ -25,7 +25,7 @@ const FlipCard = ({frontFace, backFace}: FlipCardProps) => {
       ease: "none",
       scrollTrigger: {
         trigger: container,
-        start: "top center",
+        start: "top",
         end: "bottom center",
         scrub: true,
         pin: true,
@@ -39,18 +39,18 @@ const FlipCard = ({frontFace, backFace}: FlipCardProps) => {
       ref={containerRef}
       className="min-h-screen flex items-center justify-center p-4"
     >
-      <div className="relative w-full max-w-sm h-[600px] perspective-1000">
+      <div className="relative w-full max-w-sm h-[600px] [perspective:1000px]">
         <div
           ref={cardRef}
-          className="relative w-full h-full transition-transform duration-100 transform-style-preserve-3d"
+          className="relative w-full h-full transition-transform duration-100 [transform-style:preserve-3d]"
         >
           {/* Front Side */}
-          <div className="absolute inset-0 w-full h-[500px] backface-hidden">
+          <div className="absolute inset-0 w-full h-[500px]  [backface-visibility:hidden]">
             {frontFace}
           </div>
 
           {/* Back Side */}
-          <div className="absolute inset-0 w-full h-[500px] backface-hidden rotate-y-180">
+          <div className="absolute inset-0 w-full h-[500px]  [backface-visibility:hidden] rotate-y-180">
             {backFace}
           </div>
         </div>
