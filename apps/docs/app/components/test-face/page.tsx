@@ -59,46 +59,37 @@ export default TestFace;
 
 const FRONT = () => {
   return (
-    <div className="w-full h-full bg-gray-200 rounded-3xl p-6 border-2 border-emerald-800 shadow-2xl">
-      {/* Profile Image */}
-      <div className="mb-6">
-        <Image
+    <div className="bg-emerald-900 text-white max-w-xs w-full rounded-[32px] overflow-hidden shadow-lg p-5">
+      <div className="rounded-[24px] overflow-hidden">
+        <img
           src="/images/profile-img.webp"
-          alt="Profile"
-          width={400}
-          height={500}
-          className="w-full h-80 object-cover rounded-2xl"
+          alt="Jerome Bell"
+          className="w-full h-72 object-cover"
         />
       </div>
 
-      {/* Profile Info */}
-      <div className="space-y-4">
-        <div>
-          <h1 className="text-white text-3xl font-bold mb-2">Jerome bell</h1>
-          <p className="text-white/80 text-base leading-relaxed">
-            Product Designer who focuses
-            <br />
-            on simplicity & usability
-          </p>
-        </div>
+      <div className="mt-5">
+        <h2 className="text-xl font-semibold">Jerome bell</h2>
+        <p className="text-sm text-gray-400 mt-1">
+          Product Designer who focuses on simplicty & usability
+        </p>
+      </div>
 
-        {/* Stats and Follow Button */}
-        <div className="flex items-center justify-between pt-4">
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center space-x-2 text-white/90">
-              <Users className="w-4 h-4" />
-              <span className="font-semibold">423</span>
-            </div>
-            <div className="flex items-center space-x-2 text-white/90">
-              <Grid className="w-4 h-4" />
-              <span className="font-semibold">42</span>
-            </div>
+      <div className="mt-5 flex items-center justify-between">
+        <div className="flex items-center gap-4 text-sm text-gray-400">
+          <div className="flex items-center gap-1">
+            <Users className="w-4 h-4" />
+
+            <span>423</span>
           </div>
-
-          <button className="bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition-colors">
-            Follow
-          </button>
+          <div className="flex items-center gap-1">
+            <Grid className="w-4 h-4" />
+            <span>42</span>
+          </div>
         </div>
+        <button className="bg-[#215941] hover:bg-[#2b6f53] transition px-5 py-2 rounded-full text-sm font-medium text-white shadow-md">
+          Follow
+        </button>
       </div>
     </div>
   );
@@ -106,7 +97,7 @@ const FRONT = () => {
 
 function BACK() {
   return (
-    <div className="w-full h-full bg-gray-200 rounded-3xl p-6 border-2 border-emerald-800 shadow-2xl">
+    <div className="bg-emerald-900 text-white max-w-xs w-full rounded-[32px] overflow-hidden shadow-lg p-5">
       {/* Header */}
       <div className="mb-6">
         <h2 className="text-white text-2xl font-bold mb-2">About Jerome</h2>
