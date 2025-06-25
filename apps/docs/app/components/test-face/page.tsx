@@ -1,9 +1,8 @@
 "use client";
 import CodeBlock from "@/components/Showcase/CodeBlock";
-import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import ScrollPreview from "@/components/Showcase/ScrollPreview";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
-import FlipCard from "@repo/ui/components/FlipCard";
+import FlippingCard from "@repo/ui/components/FlippingCard";
 import {
   Calendar,
   Code,
@@ -30,8 +29,17 @@ const TestFace = () => {
       <div>
         <TabLayout>
           <PreviewTab>
-            <div className=" h-[300vh]">
-              <FlipCard frontFace={<FRONT />} backFace={<BACK />} />
+            {/* <ScrollPreview>
+              {(scrollContainerRef) => (
+                <>
+                  <div className="h-[300vh] w-full ">
+                    <FlipCard frontFace={<FRONT />} backFace={<BACK />} />
+                  </div>
+                </>
+              )}
+            </ScrollPreview> */}
+            <div className="h-[300vh] w-full ">
+              <FlippingCard frontFace={<FRONT />} backFace={<BACK />} />
             </div>
           </PreviewTab>
           <CodeTab>
@@ -61,10 +69,12 @@ const FRONT = () => {
   return (
     <div className="bg-emerald-900 text-white max-w-xs w-full rounded-[32px] overflow-hidden shadow-lg p-5">
       <div className="rounded-[24px] overflow-hidden">
-        <img
+        <Image
           src="/images/profile-img.webp"
           alt="Jerome Bell"
           className="w-full h-72 object-cover"
+          width={300}
+          height={288}
         />
       </div>
 

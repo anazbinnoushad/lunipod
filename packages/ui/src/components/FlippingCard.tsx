@@ -6,11 +6,11 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useGSAP} from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
-interface FlipCardProps {
+interface FlippingCardProps {
   frontFace: React.ReactNode;
   backFace: React.ReactNode;
 }
-const FlipCard = ({frontFace, backFace}: FlipCardProps) => {
+const FlippingCard = ({frontFace, backFace}: FlippingCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -29,7 +29,6 @@ const FlipCard = ({frontFace, backFace}: FlipCardProps) => {
         end: "bottom center",
         scrub: true,
         pin: true,
-        markers: false, // Set to true for debugging
       },
     });
   }, []);
@@ -44,12 +43,10 @@ const FlipCard = ({frontFace, backFace}: FlipCardProps) => {
           ref={cardRef}
           className="relative w-full h-full transition-transform duration-100 [transform-style:preserve-3d]"
         >
-          {/* Front Side */}
           <div className="absolute inset-0 w-full h-[500px]  [backface-visibility:hidden]">
             {frontFace}
           </div>
 
-          {/* Back Side */}
           <div className="absolute inset-0 w-full h-[500px]  [backface-visibility:hidden] rotate-y-180">
             {backFace}
           </div>
@@ -59,4 +56,4 @@ const FlipCard = ({frontFace, backFace}: FlipCardProps) => {
   );
 };
 
-export default FlipCard;
+export default FlippingCard;
