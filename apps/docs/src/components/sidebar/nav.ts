@@ -12,4 +12,5 @@ export const nav: NavItem[] = [
   {title: "Staggered Paragraph", route: "staggered-paragraph", badge: "New"},
   {title: "Draggable Letters", route: "draggable-letters", badge: "New"},
   {title: "Count Up Loading", route: "count-up-loading"},
+  {title: "Flipping Card", route: "flipping-card", badge: "New"},
 ];
