@@ -1,3 +1,4 @@
+const code = `
 "use client";
 
 import type React from "react";
@@ -75,3 +76,45 @@ const LiquidGlassButton = ({
 };
 
 export default LiquidGlassButton;
+
+`;
+
+const propsData = [
+  {
+    property: "icon",
+    type: "React.ReactElement",
+    default: "undefined",
+    description: "Optional icon displayed inside a circular glass container.",
+  },
+  {
+    property: "text",
+    type: "string",
+    default: "—",
+    description: "Primary label of the button.",
+  },
+  {
+    property: "subText",
+    type: "string",
+    default: "undefined",
+    description: "Optional secondary label shown below the main text.",
+  },
+  {
+    property: "onClick",
+    type: "React.MouseEventHandler<HTMLButtonElement>",
+    default: "undefined",
+    description: "Click event handler for the button.",
+  },
+];
+
+export const liquidGlassButtonRaw = {
+  installation: `npm i @gsap/react`,
+  usage: `
+<LiquidGlassButton
+    icon={<Mail className="text-gray-700" />}
+    text="Email Me"
+    subText="Send a direct email"
+/>
+  `,
+  code: code,
+  props: propsData,
+};
