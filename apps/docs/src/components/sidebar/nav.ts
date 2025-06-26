@@ -13,4 +13,5 @@ export const nav: NavItem[] = [
   {title: "Draggable Letters", route: "draggable-letters", badge: "New"},
   {title: "Count Up Loading", route: "count-up-loading"},
   {title: "Flipping Card", route: "flipping-card", badge: "New"},
+  {title: "Liquid Glass Button", route: "liquidglass-button", badge: "New"},
 ];
