@@ -1,4 +1,3 @@
-import horizontalLoop from "../../../../packages/ui/src/helpers/horizontalLoop";
 
 const code = `
 "use client";
