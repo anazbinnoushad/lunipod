@@ -10,4 +10,8 @@ export const nav: NavItem[] = [
   {title: "Magnetic Text", route: "magnetic-text"},
   {title: "Text Velocity Loop", route: "text-velocity-loop"},
   {title: "Staggered Paragraph", route: "staggered-paragraph", badge: "New"},
+  {title: "Draggable Letters", route: "draggable-letters", badge: "New"},
+  {title: "Count Up Loading", route: "count-up-loading"},
+  {title: "Flipping Card", route: "flipping-card", badge: "New"},
+  {title: "Liquid Glass Button", route: "liquidglass-button", badge: "New"},
 ];

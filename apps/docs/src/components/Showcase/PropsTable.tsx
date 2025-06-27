@@ -26,7 +26,7 @@ const PropsTable = ({data}: PropsTableProps) => {
       <div className="border border-muted rounded-lg overflow-hidden">
         <Table>
           <TableHeader>
-            <TableRow className="border-muted">
+            <TableRow className="border-muted bg-muted/40">
               <TableHead className="font-medium border-r border-muted px-6 py-4.5">
                 Property
               </TableHead>
@@ -43,7 +43,7 @@ const PropsTable = ({data}: PropsTableProps) => {
           </TableHeader>
           <TableBody>
             {data.map((prop) => (
-              <TableRow key={prop.property} className="border-muted">
+              <TableRow key={prop.property} className="border-muted ">
                 <TableCell className="border border-muted border-r px-6 py-4.5">
                   {prop.property}
                 </TableCell>

@@ -1,8 +1,10 @@
 "use client";
 import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
+import ScrollPreview from "@/components/Showcase/ScrollPreview";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
-import DraggableText from "@repo/ui/Components/DraggableText";
+import LiquidGlassButton from "@repo/ui/components/LiquidGlassButton";
+import {Mail} from "lucide-react";
 
 const TestFace = () => {
   return (
@@ -10,15 +12,20 @@ const TestFace = () => {
       <div>
         <h2 className=" text-3xl font-bold mb-2">Testing Component</h2>
         <h6 className="font-light text-muted-foreground">
-          A customizable, compound modal component with animated transitions
+          TEST COMPONENTS HERE
         </h6>
       </div>
       <div className=" relative"></div>
       <div>
         <TabLayout>
           <PreviewTab>
-            <PreviewBlock>
-              <DraggableText text="LUNIPOD" />
+            <PreviewBlock className="bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 flex flex-col gap-3">
+              <LiquidGlassButton
+                icon={<Mail className="text-gray-700" />}
+                text="Email Me"
+                subText="Send a direct email"
+              />
+              <LiquidGlassButton text="Email Me" />
             </PreviewBlock>
           </PreviewTab>
           <CodeTab>
