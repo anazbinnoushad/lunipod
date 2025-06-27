@@ -1,8 +1,8 @@
 "use client";
 
-import {useRef} from "react";
+import { useRef } from "react";
 import gsap from "gsap";
-import {useGSAP} from "@gsap/react";
+import { useGSAP } from "@gsap/react";
 
 interface UnfoldingTextProps {
   text: string;
@@ -38,11 +38,11 @@ const UnfoldingText = ({
           });
         });
     },
-    {scope: textRef}
+    { scope: textRef },
   );
 
   return (
-    <div style={{perspective: 500}}>
+    <div style={{ perspective: 500 }}>
       <div
         ref={textRef}
         className={`font-bold ${className}`}

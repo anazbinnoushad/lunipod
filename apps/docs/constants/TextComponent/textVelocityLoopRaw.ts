@@ -1,4 +1,3 @@
-
 const code = `
 "use client";
 

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import {Button} from "../ui/button";
-import {Github} from "lucide-react";
+import { Button } from "../ui/button";
+import { Github } from "lucide-react";
 
 const Navbar = () => {
   return (

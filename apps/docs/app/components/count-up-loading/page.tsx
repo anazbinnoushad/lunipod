@@ -1,9 +1,13 @@
 import PageHeader from "@/components/Showcase/PageHeader";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import PropsTable from "@/components/Showcase/PropsTable";
-import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
+import {
+  CodeTab,
+  PreviewTab,
+  TabLayout,
+} from "@/components/Showcase/TabLayout";
 import CountUpLoading from "@repo/ui/components/CountUpLoading";
-import {countUpLoadingRaw} from "../../../constants/TextComponent/countUpLoadingRaw";
+import { countUpLoadingRaw } from "../../../constants/TextComponent/countUpLoadingRaw";
 import SectionTitle from "@/components/Showcase/SectionTitle";
 import CodeBlock from "@/components/Showcase/CodeBlock";
 

@@ -3,7 +3,7 @@ interface PageHeaderProps {
   description: string;
 }
 
-const PageHeader = ({heading, description}: PageHeaderProps) => {
+const PageHeader = ({ heading, description }: PageHeaderProps) => {
   return (
     <div>
       <h2 className=" text-3xl font-bold mb-2">{heading}</h2>

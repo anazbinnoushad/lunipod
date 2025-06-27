@@ -1,8 +1,8 @@
 "use client";
 
 import type React from "react";
-import {useRef} from "react";
-import {gsap} from "gsap";
+import { useRef } from "react";
+import { gsap } from "gsap";
 
 interface LiquidGlassButtonProps {
   icon?: React.ReactElement;

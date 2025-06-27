@@ -3,9 +3,13 @@ import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import ScrollPreview from "@/components/Showcase/ScrollPreview";
 import { FilePathLabel } from "@/components/Showcase/FilePath";
-import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
+import {
+  CodeTab,
+  PreviewTab,
+  TabLayout,
+} from "@/components/Showcase/TabLayout";
 import TextVelocityLoop from "@repo/ui/components/TextVelocityLoop";
-import {textVelocityLoopRaw} from "../../../constants/TextComponent/textVelocityLoopRaw";
+import { textVelocityLoopRaw } from "../../../constants/TextComponent/textVelocityLoopRaw";
 import SectionTitle from "@/components/Showcase/SectionTitle";
 import PropsTable from "@/components/Showcase/PropsTable";
 import PageHeader from "@/components/Showcase/PageHeader";

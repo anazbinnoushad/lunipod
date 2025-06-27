@@ -1,10 +1,10 @@
 "use client";
 
-import React, {useRef, ReactNode, ReactElement, isValidElement} from "react";
+import React, { useRef, ReactNode, ReactElement, isValidElement } from "react";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
-import {useGSAP} from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -89,32 +89,32 @@ export default function RealSplitText({
         if (type === "lines") {
           elementsToAnimate.current.push(
             ...split.lines.filter(
-              (el): el is HTMLElement => el instanceof HTMLElement
-            )
+              (el): el is HTMLElement => el instanceof HTMLElement,
+            ),
           );
         } else if (type === "words") {
           elementsToAnimate.current.push(
             ...split.words.filter(
-              (el): el is HTMLElement => el instanceof HTMLElement
-            )
+              (el): el is HTMLElement => el instanceof HTMLElement,
+            ),
           );
         } else if (type === "chars") {
           elementsToAnimate.current.push(
             ...split.chars.filter(
-              (el): el is HTMLElement => el instanceof HTMLElement
-            )
+              (el): el is HTMLElement => el instanceof HTMLElement,
+            ),
           );
         } else {
           elementsToAnimate.current.push(
             ...split.lines.filter(
-              (el): el is HTMLElement => el instanceof HTMLElement
+              (el): el is HTMLElement => el instanceof HTMLElement,
             ),
             ...split.words.filter(
-              (el): el is HTMLElement => el instanceof HTMLElement
+              (el): el is HTMLElement => el instanceof HTMLElement,
             ),
             ...split.chars.filter(
-              (el): el is HTMLElement => el instanceof HTMLElement
-            )
+              (el): el is HTMLElement => el instanceof HTMLElement,
+            ),
           );
         }
       });
@@ -168,7 +168,7 @@ export default function RealSplitText({
         once,
         type,
       ],
-    }
+    },
   );
 
   if (
