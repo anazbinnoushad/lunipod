@@ -1,9 +1,9 @@
 "use client";
 
-import {RefObject, useEffect, useRef, ReactNode} from "react";
+import { RefObject, useEffect, useRef, ReactNode } from "react";
 import gsap from "gsap";
-import {Observer} from "gsap/Observer";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
+import { Observer } from "gsap/Observer";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type ObserverInstance from "gsap/Observer";
 // @ts-ignore
 import horizontalLoop from "../helpers/horizontalLoop";
@@ -102,7 +102,7 @@ export const TextVelocityLoop = ({
             timeScale: 1 * direction,
             duration: 1.5,
           },
-          "+=0.5"
+          "+=0.5",
         );
     }
 
@@ -131,12 +131,12 @@ export const TextVelocityLoop = ({
             ) : (
               <h4
                 className="whitespace-nowrap text-white font-black"
-                style={{fontSize}}
+                style={{ fontSize }}
                 key={`title_${idx}`}
               >
                 {item}
               </h4>
-            )
+            ),
           )}
       </div>
     </div>

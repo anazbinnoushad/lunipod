@@ -1,9 +1,9 @@
 "use client";
-import {useEffect, useRef} from "react";
-import {gsap} from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
-import {Draggable} from "gsap/Draggable";
-import {InertiaPlugin} from "gsap/InertiaPlugin";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Draggable } from "gsap/Draggable";
+import { InertiaPlugin } from "gsap/InertiaPlugin";
 
 gsap.registerPlugin(ScrollTrigger, Draggable, InertiaPlugin);
 
@@ -23,7 +23,7 @@ export default function MagneticText({
     letterRefs.current.forEach((el) => {
       const xRand = gsap.utils.random(-500, 500);
       const yRand = gsap.utils.random(-400, 400);
-      gsap.set(el, {x: xRand, y: yRand, opacity: 0});
+      gsap.set(el, { x: xRand, y: yRand, opacity: 0 });
     });
 
     gsap.to(letterRefs.current, {
@@ -45,7 +45,7 @@ export default function MagneticText({
             edgeResistance: 0.7,
             inertia: true,
             onPress() {
-              gsap.to(el, {scale: 1.2, duration: 0.2});
+              gsap.to(el, { scale: 1.2, duration: 0.2 });
             },
             onRelease() {
               gsap.to(el, {

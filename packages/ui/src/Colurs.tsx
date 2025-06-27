@@ -1,4 +1,4 @@
-import {cn} from "@repo/utils/cn";
+import { cn } from "@repo/utils/cn";
 
 const colorsPrimary = [
   {
@@ -94,7 +94,7 @@ const colorsSecondary = [
   },
 ];
 
-export function Colors({secondary}: {secondary?: boolean}) {
+export function Colors({ secondary }: { secondary?: boolean }) {
   const colorValues = secondary ? colorsSecondary : colorsPrimary;
   return (
     <div>

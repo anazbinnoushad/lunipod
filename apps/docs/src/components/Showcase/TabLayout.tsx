@@ -1,6 +1,6 @@
-import React, {ReactElement, ReactNode, isValidElement} from "react";
-import {Tabs, TabsContent, TabsList, TabsTrigger} from "../ui/tabs";
-import {CodeXml, GalleryThumbnails} from "lucide-react";
+import React, { ReactElement, ReactNode, isValidElement } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { CodeXml, GalleryThumbnails } from "lucide-react";
 
 interface TabLayoutProps {
   children: ReactNode;
@@ -10,10 +10,10 @@ interface TabChildProps {
   children: ReactNode;
 }
 
-const PreviewTab = ({children}: TabChildProps) => <>{children}</>;
-const CodeTab = ({children}: TabChildProps) => <>{children}</>;
+const PreviewTab = ({ children }: TabChildProps) => <>{children}</>;
+const CodeTab = ({ children }: TabChildProps) => <>{children}</>;
 
-const TabLayout = ({children}: TabLayoutProps) => {
+const TabLayout = ({ children }: TabLayoutProps) => {
   const contentMap: {
     PreviewTab: ReactNode | null;
     CodeTab: ReactNode | null;
@@ -52,4 +52,4 @@ const TabLayout = ({children}: TabLayoutProps) => {
   );
 };
 
-export {TabLayout, PreviewTab, CodeTab};
+export { TabLayout, PreviewTab, CodeTab };

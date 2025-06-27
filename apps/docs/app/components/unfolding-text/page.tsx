@@ -1,9 +1,13 @@
 import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
-import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
+import {
+  CodeTab,
+  PreviewTab,
+  TabLayout,
+} from "@/components/Showcase/TabLayout";
 import UnfoldingText from "@repo/ui/components/UnfoldingText";
 import localFont from "next/font/local";
-import {unfoldingTextRaw} from "../../../constants/TextComponent/unfoldingTextRaw";
+import { unfoldingTextRaw } from "../../../constants/TextComponent/unfoldingTextRaw";
 import PropsTable from "@/components/Showcase/PropsTable";
 import SectionTitle from "@/components/Showcase/SectionTitle";
 import PageHeader from "@/components/Showcase/PageHeader";

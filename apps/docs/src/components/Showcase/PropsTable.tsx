@@ -19,7 +19,7 @@ type PropsTableProps = {
   data: PropItem[];
 };
 
-const PropsTable = ({data}: PropsTableProps) => {
+const PropsTable = ({ data }: PropsTableProps) => {
   return (
     <div>
       <SectionTitle className="mt-4">Props</SectionTitle>

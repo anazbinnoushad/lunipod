@@ -1,12 +1,12 @@
 "use client";
 
-import {useState} from "react";
-import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
-import {synthwave84} from "react-syntax-highlighter/dist/esm/styles/prism";
-import {cn} from "@/lib/utils";
-import {Button} from "@/components/ui/button";
-import {Check, Copy} from "lucide-react";
-import {toast} from "sonner";
+import { useState } from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { synthwave84 } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Check, Copy } from "lucide-react";
+import { toast } from "sonner";
 
 interface CodeBlockProps {
   language: string;
@@ -14,7 +14,7 @@ interface CodeBlockProps {
   className?: string;
 }
 
-const CodeBlock: React.FC<CodeBlockProps> = ({language, code, className}) => {
+const CodeBlock: React.FC<CodeBlockProps> = ({ language, code, className }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -32,7 +32,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({language, code, className}) => {
     <div
       className={cn(
         "relative rounded-lg border border-muted text-sm overflow-hidden bg-black",
-        className
+        className,
       )}
     >
       <Button
@@ -40,7 +40,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({language, code, className}) => {
         size="icon"
         className={cn(
           "absolute top-2 right-2 z-10 h-8 w-8 rounded-md text-muted-foreground hover:bg-muted",
-          copied && "text-green-500"
+          copied && "text-green-500",
         )}
         onClick={handleCopy}
       >

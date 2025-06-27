@@ -2,7 +2,11 @@ import CodeBlock from "@/components/Showcase/CodeBlock";
 import PageHeader from "@/components/Showcase/PageHeader";
 import PropsTable from "@/components/Showcase/PropsTable";
 import SectionTitle from "@/components/Showcase/SectionTitle";
-import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
+import {
+  CodeTab,
+  PreviewTab,
+  TabLayout,
+} from "@/components/Showcase/TabLayout";
 import FlippingCard from "@repo/ui/components/FlippingCard";
 import {
   Calendar,
@@ -16,7 +20,7 @@ import {
   Zap,
 } from "lucide-react";
 import Image from "next/image";
-import {flippingCardRaw} from "../../../constants/ContainerComponent/flippingCardRaw";
+import { flippingCardRaw } from "../../../constants/ContainerComponent/flippingCardRaw";
 
 const FlippingCardShowcase = () => {
   return (

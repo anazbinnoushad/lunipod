@@ -1,16 +1,16 @@
 "use client";
 
-import {useRef} from "react";
-import {gsap} from "gsap";
-import {ScrollTrigger} from "gsap/ScrollTrigger";
-import {useGSAP} from "@gsap/react";
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 interface FlippingCardProps {
   frontFace: React.ReactNode;
   backFace: React.ReactNode;
 }
-const FlippingCard = ({frontFace, backFace}: FlippingCardProps) => {
+const FlippingCard = ({ frontFace, backFace }: FlippingCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 

@@ -1,14 +1,14 @@
 "use client";
-import {ReactNode, useRef} from "react";
+import { ReactNode, useRef } from "react";
 
 interface ScrollPreviewProps {
   children: (
-    scrollContainerRef: React.RefObject<HTMLDivElement | null>
+    scrollContainerRef: React.RefObject<HTMLDivElement | null>,
   ) => ReactNode;
   className?: string;
 }
 
-const ScrollPreview = ({children, className = ""}: ScrollPreviewProps) => {
+const ScrollPreview = ({ children, className = "" }: ScrollPreviewProps) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   return (
     <div

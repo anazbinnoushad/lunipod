@@ -2,9 +2,13 @@
 import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import ScrollPreview from "@/components/Showcase/ScrollPreview";
-import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
+import {
+  CodeTab,
+  PreviewTab,
+  TabLayout,
+} from "@/components/Showcase/TabLayout";
 import LiquidGlassButton from "@repo/ui/components/LiquidGlassButton";
-import {Mail} from "lucide-react";
+import { Mail } from "lucide-react";
 
 const TestFace = () => {
   return (

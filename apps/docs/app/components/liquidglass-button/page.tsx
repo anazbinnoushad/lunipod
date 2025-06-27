@@ -1,10 +1,14 @@
 import PageHeader from "@/components/Showcase/PageHeader";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import PropsTable from "@/components/Showcase/PropsTable";
-import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
+import {
+  CodeTab,
+  PreviewTab,
+  TabLayout,
+} from "@/components/Showcase/TabLayout";
 import LiquidGlassButton from "@repo/ui/components/LiquidGlassButton";
-import {Mail} from "lucide-react";
-import {liquidGlassButtonRaw} from "../../../constants/ContainerComponent/liquidGlassButtonRaw";
+import { Mail } from "lucide-react";
+import { liquidGlassButtonRaw } from "../../../constants/ContainerComponent/liquidGlassButtonRaw";
 import SectionTitle from "@/components/Showcase/SectionTitle";
 import CodeBlock from "@/components/Showcase/CodeBlock";
 

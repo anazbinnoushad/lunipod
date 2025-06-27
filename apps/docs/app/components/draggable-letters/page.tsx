@@ -1,8 +1,12 @@
 import PageHeader from "@/components/Showcase/PageHeader";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
-import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
+import {
+  CodeTab,
+  PreviewTab,
+  TabLayout,
+} from "@/components/Showcase/TabLayout";
 import DraggableLetters from "@repo/ui/components/DraggableLetters";
-import {draggableLettersRaw} from "../../../constants/TextComponent/draggableLettersRaw";
+import { draggableLettersRaw } from "../../../constants/TextComponent/draggableLettersRaw";
 import PropsTable from "@/components/Showcase/PropsTable";
 import SectionTitle from "@/components/Showcase/SectionTitle";
 import CodeBlock from "@/components/Showcase/CodeBlock";

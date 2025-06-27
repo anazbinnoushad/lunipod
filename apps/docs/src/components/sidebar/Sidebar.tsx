@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import {nav} from "./nav";
-import {usePathname} from "next/navigation";
-import {Badge} from "../ui/badge";
+import { nav } from "./nav";
+import { usePathname } from "next/navigation";
+import { Badge } from "../ui/badge";
 
 const Sidebar = () => {
   const pathname = usePathname();

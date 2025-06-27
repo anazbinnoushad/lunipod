@@ -1,5 +1,5 @@
-import {cva, type VariantProps} from "class-variance-authority";
-import {cn} from "@repo/utils/cn";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@repo/utils/cn";
 import "../dist/styles.css";
 
 const buttonStyles = cva(
@@ -63,7 +63,7 @@ const buttonStyles = cva(
       variant: "contained",
       color: "primary",
     },
-  }
+  },
 );
 
 interface ButtonProps extends VariantProps<typeof buttonStyles> {
@@ -71,12 +71,17 @@ interface ButtonProps extends VariantProps<typeof buttonStyles> {
   href: string;
 }
 
-export default function Button({children, href, variant, color}: ButtonProps) {
+export default function Button({
+  children,
+  href,
+  variant,
+  color,
+}: ButtonProps) {
   return (
     <a
       className={cn(
-        buttonStyles({variant, color}),
-        "flex justify-center items-center"
+        buttonStyles({ variant, color }),
+        "flex justify-center items-center",
       )}
       href={href}
       rel="noopener noreferrer"

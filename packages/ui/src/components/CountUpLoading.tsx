@@ -1,7 +1,7 @@
 "use client";
 
-import React, {useEffect, useRef, useState} from "react";
-import {useGSAP} from "@gsap/react";
+import React, { useEffect, useRef, useState } from "react";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 interface CountUpLoadingProps {
@@ -40,13 +40,13 @@ const CountUpLoading: React.FC<CountUpLoadingProps> = ({
         });
       }
     },
-    {dependencies: [progress, textWidth]}
+    { dependencies: [progress, textWidth] },
   );
 
   useGSAP(
     () => {
       if (isReady && containerRef.current && fadeOut) {
-        const tl = gsap.timeline({onComplete: onLoadingComplete});
+        const tl = gsap.timeline({ onComplete: onLoadingComplete });
 
         tl.to(containerRef.current, {
           opacity: 0,
@@ -55,7 +55,7 @@ const CountUpLoading: React.FC<CountUpLoadingProps> = ({
         });
       }
     },
-    {dependencies: [isReady]}
+    { dependencies: [isReady] },
   );
 
   useEffect(() => {
