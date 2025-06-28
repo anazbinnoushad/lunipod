@@ -58,18 +58,14 @@ const LiquidGlassButton = ({
           {icon}
         </div>
       )}
-
       <div className="flex flex-col items-start text-left">
         <span className="text-white font-semibold text-lg leading-tight">
           {text}
         </span>
         <span className="text-white/70 text-sm font-medium">{subText}</span>
       </div>
-
       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/5 via-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
       <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-
       <div className="absolute -bottom-1 left-4 right-4 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent blur-sm"></div>
     </button>
   );
