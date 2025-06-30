@@ -3,10 +3,12 @@ import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import ScrollPreview from "@/components/Showcase/ScrollPreview";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
-import ThemeToggler from "@repo/ui/components/ThemeToggler";
+import OrbitSwitch from "@repo/ui/components/OrbitSwitch";
 import {Mail} from "lucide-react";
+import {useState} from "react";
 
 const TestFace = () => {
+  const [isDark, setIsDark] = useState(true);
   return (
     <div>
       <div>
@@ -20,7 +22,10 @@ const TestFace = () => {
         <TabLayout>
           <PreviewTab>
             <PreviewBlock className=" gap-3">
-              <ThemeToggler />
+              <OrbitSwitch
+                isDark={isDark}
+                onToggle={() => setIsDark((prev) => !prev)}
+              />
             </PreviewBlock>
           </PreviewTab>
           <CodeTab>
