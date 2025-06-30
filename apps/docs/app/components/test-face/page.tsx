@@ -2,15 +2,13 @@
 import CodeBlock from "@/components/Showcase/CodeBlock";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import ScrollPreview from "@/components/Showcase/ScrollPreview";
-import {
-  CodeTab,
-  PreviewTab,
-  TabLayout,
-} from "@/components/Showcase/TabLayout";
-import LiquidGlassButton from "@repo/ui/components/LiquidGlassButton";
-import { Mail } from "lucide-react";
+import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
+import OrbitSwitch from "@repo/ui/components/OrbitSwitch";
+import {Mail} from "lucide-react";
+import {useState} from "react";
 
 const TestFace = () => {
+  const [isDark, setIsDark] = useState(true);
   return (
     <div>
       <div>
@@ -23,13 +21,11 @@ const TestFace = () => {
       <div>
         <TabLayout>
           <PreviewTab>
-            <PreviewBlock className="bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 flex flex-col gap-3">
-              <LiquidGlassButton
-                icon={<Mail className="text-gray-700" />}
-                text="Email Me"
-                subText="Send a direct email"
+            <PreviewBlock className=" gap-3">
+              <OrbitSwitch
+                isDark={isDark}
+                onToggle={() => setIsDark((prev) => !prev)}
               />
-              <LiquidGlassButton text="Email Me" />
             </PreviewBlock>
           </PreviewTab>
           <CodeTab>
