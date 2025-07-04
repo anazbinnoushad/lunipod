@@ -1,11 +1,17 @@
+"use client";
+
 import PageHeader from "@/components/Showcase/PageHeader";
 import PreviewBlock from "@/components/Showcase/PreviewBlock";
 import SectionTitle from "@/components/Showcase/SectionTitle";
 import {CodeTab, PreviewTab, TabLayout} from "@/components/Showcase/TabLayout";
 import {orbitSwitchRaw} from "../../../constants/ContainerComponent/orbitSwitchRaw";
 import CodeBlock from "@/components/Showcase/CodeBlock";
+import PropsTable from "@/components/Showcase/PropsTable";
+import OrbitSwitch from "@repo/ui/components/OrbitSwitch";
+import {useState} from "react";
 
 const OrbitSwitchShowcase = () => {
+  const [isDark, setIsDark] = useState(true);
   return (
     <div>
       <PageHeader
@@ -16,8 +22,12 @@ const OrbitSwitchShowcase = () => {
         <TabLayout>
           <PreviewTab>
             <PreviewBlock>
-              <div></div>
+              <OrbitSwitch
+                isDark={isDark}
+                onToggle={() => setIsDark((prev) => !prev)}
+              />
             </PreviewBlock>
+            <PropsTable data={orbitSwitchRaw.props} />
           </PreviewTab>
           <CodeTab>
             <SectionTitle>Installation</SectionTitle>

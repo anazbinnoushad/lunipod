@@ -52,8 +52,6 @@ const OrbitSwitch = ({isDark, onToggle}: OrbitSwitchProps) => {
         0.1 + i * 0.05
       );
     });
-
-    // document.documentElement.classList.toggle("dark", isDark);
   }, [isDark]);
 
   return (
