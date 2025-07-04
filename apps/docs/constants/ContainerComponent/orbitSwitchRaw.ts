@@ -1,3 +1,4 @@
+const code = `
 "use client";
 import {useEffect, useRef} from "react";
 import {gsap} from "gsap";
@@ -70,7 +71,7 @@ const OrbitSwitch = ({isDark, onToggle}: OrbitSwitchProps) => {
         <path ref={pathRef} d={sunPath} fill="#facc15" stroke="none" />
         {[...Array(8)].map((_, i) => (
           <circle
-            key={`ray-${i}`}
+            key={\`ray-\${i}\`}
             ref={(el) => {
               raysRef.current[i] = el!;
             }}
@@ -89,7 +90,7 @@ const OrbitSwitch = ({isDark, onToggle}: OrbitSwitchProps) => {
           {x: 10, y: 10},
         ].map((pos, i) => (
           <circle
-            key={`star-${i}`}
+            key={\`star-\${i}\`}
             ref={(el) => {
               starsRef.current[i] = el!;
             }}
@@ -106,3 +107,32 @@ const OrbitSwitch = ({isDark, onToggle}: OrbitSwitchProps) => {
 };
 
 export default OrbitSwitch;
+
+`;
+
+const propsData = [
+  {
+    property: "isDark",
+    type: "boolean",
+    default: "false",
+    description: "Indicates whether the current theme is dark mode.",
+  },
+  {
+    property: "onToggle",
+    type: "() => void",
+    default: "—",
+    description: "Callback function called when the toggle button is clicked.",
+  },
+];
+
+export const orbitSwitchRaw = {
+  installation: `npm i @gsap/react`,
+  usage: `
+<OrbitSwitch
+  isDark={isDark}
+  onToggle={() => setIsDark((prev) => !prev)}
+/>
+  `,
+  code: code,
+  props: propsData,
+};
