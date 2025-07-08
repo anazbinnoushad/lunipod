@@ -57,7 +57,7 @@ const OrbitSwitch = ({isDark, onToggle}: OrbitSwitchProps) => {
   return (
     <button
       onClick={onToggle}
-      className="w-20 h-20 rounded-full bg-gradient-to-br from-white/30 to-gray-200/10 dark:from-slate-900/30 dark:to-slate-800/10 backdrop-blur-xl shadow-lg flex items-center justify-center transition"
+      className="w-20 h-20 rounded-full bg-gradient-to-br from-white/30 to-gray-200/10 dark:from-slate-900/30 dark:to-slate-800/10 backdrop-blur-xl shadow-lg flex items-center justify-center transition cursor-pointer"
     >
       <svg
         ref={svgRef}
