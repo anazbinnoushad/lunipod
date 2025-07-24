@@ -1,6 +1,6 @@
 const WhyWeSection = () => {
   return (
-    <section className="  flex justify-center items-center my-20 mb-40">
+    <section className=" flex justify-center items-center mb-80">
       <div className="container mx-auto text-center max-w-6xl">
         <div className="flex gap-12 items-center">
           <div className=" text-left w-1/2">
