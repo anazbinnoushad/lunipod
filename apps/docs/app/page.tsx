@@ -1,3 +1,4 @@
+import NewsLetter from "@/components/Landing/NewsLetter";
 import ShowcaseSection from "@/components/Landing/ShowcaseSection";
 import WhyWeSection from "@/components/Landing/WhyWeSection";
 import {Badge} from "@/components/ui/badge";
@@ -51,6 +52,7 @@ export default function Home() {
       </section>
       <WhyWeSection />
       <ShowcaseSection />
+      <NewsLetter />
     </>
   );
 }
