@@ -24,19 +24,19 @@ const Footer = () => {
         <div className="flex flex-row gap-6 mt-4 md:mt-0">
           <a
             href="#"
-            className="hover:text-white transition-colors text-gray-400 text-sm font-light"
+            className="hover:text-white transition-colors text-muted-foreground text-sm font-extralight"
           >
             Components
           </a>
           <a
             href="#"
-            className="hover:text-white transition-colors text-gray-400 text-sm font-light"
+            className="hover:text-white transition-colors text-muted-foreground text-sm font-extralight"
           >
             GitHub
           </a>
           <a
             href="#"
-            className="hover:text-white transition-colors text-gray-400 text-sm font-light"
+            className="hover:text-white transition-colors text-muted-foreground text-sm font-extralight"
           >
             Contribute
           </a>

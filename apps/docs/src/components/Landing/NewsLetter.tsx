@@ -10,9 +10,9 @@ const NewsLetter = () => {
           <br />
           Design, Delivered.
         </h2>
-        <p className="text-gray-400 text-lg font-light text-center leading-relaxed">
+        <p className="text-gray-400 text-lg font-light text-center leading-relaxed -mx-10">
           Join our newsletter for handpicked insights, release updates, and
-          design inspiration—direct to your inbox. Never spammy.
+          design inspiration direct to your inbox. Never spammy.
         </p>
         <div className="w-full flex justify-center items-center">
           <form className="w-3/4 flex flex-col sm:flex-row gap-3">
