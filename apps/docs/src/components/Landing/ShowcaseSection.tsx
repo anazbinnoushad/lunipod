@@ -10,23 +10,42 @@ const ShowcaseSection = () => {
         </div>
         <div className=" flex gap-5">
           <div className=" w-1/3">
-            <FeatureCard />
+            <FeatureCard
+              icon="TS"
+              title="TypeScript Ready"
+              description="  Full type safety out of the box"
+            />
+          </div>
+          <div className=" w-1/3">
+            <FeatureCard
+              icon="100%"
+              title="Open Source"
+              description="Community-driven, transparent code contribute and customize freely."
+            />
           </div>
           <div className=" w-1/3">
             {" "}
-            <FeatureCard />
-          </div>
-          <div className=" w-1/3">
-            {" "}
-            <FeatureCard />
+            <FeatureCard
+              icon="0"
+              title="Zero setup"
+              description="Drop in components and go—no configuration required."
+            />
           </div>
         </div>
         <div className="flex gap-5">
           <div className=" w-1/2">
-            <FeatureCard />
+            <FeatureCard
+              icon="TS"
+              title="Performance Optimized"
+              description="Lightweight components with minimal runtime overhead for fast load times."
+            />
           </div>
           <div className=" w-1/2">
-            <FeatureCard />
+            <FeatureCard
+              icon="TS"
+              title="Animated & Styled to Perfection"
+              description=" Stunning animations powered by GSAP and seamless customizability with Tailwind CSS."
+            />
           </div>
         </div>
       </div>
@@ -36,18 +55,22 @@ const ShowcaseSection = () => {
 
 export default ShowcaseSection;
 
-const FeatureCard = () => {
+interface FeatureCardProps {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const FeatureCard = ({icon, title, description}: FeatureCardProps) => {
   return (
     <div className="   border  bg-neutral-900 rounded-3xl p-4 py-16 w-full">
-      <h4 className=" text-9xl font-semibold bg-gradient-to-b from-white via-gray-300 to-gray-600 bg-clip-text text-transparent">
-        TS
+      <h4 className=" text-7xl font-semibold bg-gradient-to-b from-white via-gray-300 to-gray-600 bg-clip-text text-transparent">
+        {icon}
       </h4>
       <h5 className=" text-3xl bg-gradient-to-b from-gray-200  to-gray-500 bg-clip-text text-transparent">
-        TypeScript Ready
+        {title}
       </h5>
-      <p className=" text-base font-light mt-4 text-gray-200">
-        Full type safety out of the box
-      </p>
+      <p className=" text-base font-light mt-4 text-gray-200">{description}</p>
     </div>
   );
 };

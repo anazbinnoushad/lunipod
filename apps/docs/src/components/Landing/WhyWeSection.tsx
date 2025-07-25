@@ -11,7 +11,7 @@ const WhyWeSection = () => {
             </h3>
           </div>
           <div className=" max-w-3xl w-1/2">
-            <p className="text-gray-400 text-lg font-light text-center leading-relaxed">
+            <p className="text-gray-400 text-lg font-light text-left leading-relaxed">
               With Lunipod UI, building beautiful interfaces is effortless,
               empowering, and enjoyable. Our intuitive component library brings
               together everything you need to create stunning user experiences
